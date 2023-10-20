@@ -1,0 +1,161 @@
+{
+	"layer": "top",
+	"modules-left": ["custom/launcher","cpu","memory","battery", "backlight", "pulseaudio"],
+	"modules-center": ["river/tags"],
+	"modules-right": ["custom/updates", "custom/caffeine_dis", "custom/caffeine_en", "clock", "custom/wallpaper", "tray", "bluetooth", "custom/power"],
+
+ "custom/launcher":{
+        "format": "",
+        "on-click": "fuzzel --show drun",
+        "on-click-right": "killall fuzzel",
+        "tooltip": false,
+    },
+
+	"cpu": {
+        "format": " {}%",
+        "max-length": 10
+    },
+
+ "memory": {
+        "interval": 5,
+        "format": " {used}G",
+        "max-length": 10
+    },
+
+ "battery": {
+        "interval": 2,
+        "states": {
+            "good": 85,
+            "medium": 65,
+            "low": 30 
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+ "backlight": {
+          "format": "󰃝 {}%",
+          "on-scroll-up": "sudo light -A 5",
+          "on-scroll-down": "sudo light -U 5",
+          "tooltip": false,
+	  },
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+    "format-bluetooth": "󰂰 {volume}%",
+		"format-muted": "󰝟 0%",
+    "states": {
+      "muted": 0
+    },
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "󰕾", ""]
+		}
+	},
+
+ "river/tags": {
+          "num-tags": 6
+    },
+
+"custom/cmus": {
+    "format": "♪ {}",
+    "max-length": 10,
+    "interval": 2,
+    "exec": "cmus-remote -C \"format_print '%a - %t'\"", 
+    "exec-if": "pgrep cmus",
+    "on-click": "cmus-remote -u",                            
+    },
+
+ "clock": {
+        "format": "{: %I:%M %p   %d/%m/%Y}"
+    },
+		    
+"custom/updates":{
+        "tooltip": false,
+        "format": "{} ",
+        "exec": "bash ~/.config/scripts/system_update",
+        "interval": 3600,
+        "on-click": "alacritty -e paru -Syu --noconfirm && dunstify -u normal \"Success!\" \"<span fgcolor='black'>The system has been updated successfully.</span>\"",
+        "exec-on-event": true
+    },
+
+"custom/caffeine_dis": {
+    "format": "{}",
+    "exec": "echo '󰾪'",
+    "exec-if": "[[ $(cat ~/.config/scripts/data.txt | awk 'NR==1{print $2}') == 'disabled' ]]", 
+    "exec-on-event": true,
+    "on-click": "sed -i '1s/disabled/enabled/' ~/.config/scripts/data.txt && dunstify -u normal \"Success!\" \"<span fgcolor='black'>Caffeine is enabled successfully.</span>\"",
+    "interval": 1,
+    "tooltip":false,
+  },
+
+  "custom/caffeine_en": {
+    "format": "{}",
+    "exec": "echo ''",
+    "exec-if": "[[ $(cat ~/.config/scripts/data.txt | awk 'NR==1{print $2}') == 'enabled' ]]",
+    "exec-on-event": true,
+    "on-click": "sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt && dunstify -u normal \"Success!\" \"<span fgcolor='black'>Caffeine is disabled successfully.</span>\"",
+    "interval": 1,
+    "tooltip":false,
+  },
+
+"clock": {
+        "format": "{: %I:%M %p   %b, %d %a}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+
+"custom/wallpaper":{
+        "format":" ",
+        "on-click": "bash ~/.config/scripts/wallpaper_changer",
+        "tooltip": false,
+    },
+    
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+
+ "bluetooth": {
+    "format": " {status}",
+    "format-on": "",
+    "format-off": "󰂲",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "max-length": 15,
+    "on-click": "bash ~/.config/scripts/toggle_bluetooth"
+  },
+
+     
+ "custom/power":{
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "bash ~/.config/scripts/power_menu",
+    },
+  }

@@ -1,0 +1,211 @@
+* {
+	border: none;
+  font-family: "JetbrainsMono Nerd Font" ;
+	font-size: 16px;
+}
+
+window#waybar {
+	background: black;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+ 
+#custom-launcher {
+	font-size: 24px;
+  color: #59ACFF;
+  padding-left: 16px;
+  padding-right: 24px;
+  border-radius: 4px;
+  background: #372736;
+  border: 2px solid black;
+}
+
+#cpu {
+	margin-top: 4px;
+	margin-left: 16px;
+  margin-right: 8px;
+  color: white;
+}
+
+#memory, #battery, #backlight, #pulseaudio {
+	margin-top: 4px;
+	margin-left: 8px;
+  margin-right: 8px;
+  color: white;
+}
+
+#battery.good {
+  color: #99acff;
+}
+
+#battery.medium {
+  color: #b0fc38;
+}
+
+#battery.low {
+  color: red;
+}
+
+#battery.charging, #battery.plugged {
+    color: #59acff;
+}
+
+#battery.low:not(.charging) {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#backlight {
+  color: yellow;
+}
+
+#pulseaudio {
+  color: white;
+}
+
+
+#tags {
+	background: #372736; 
+  border-radius: 4px;
+}
+
+#tags button {
+	color: #B5E8E0;
+}
+
+#tags button.occupied {
+	color: #F28FAD;
+}
+
+#tags button.focused {
+  	color: gold;
+    border-top: 2px solid gold;
+    border-bottom: 2px solid gold;
+}
+
+#tags button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	color: #FAE3B0;
+}
+
+#tags button.focused:hover {
+  color: #E8A2AF;
+  border-top: 2px solid #E8A2AF;
+  border-bottom: 2px solid #E8A2AF;
+}
+
+#custom-updates {
+  margin-right: 8px;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: red;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #372736;
+  border-radius: 8px;
+}
+
+#custom-caffeine_dis {
+  font-size: 18px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 16px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+}
+
+#custom-caffeine_en {
+  font-size: 18px;
+  background: orange;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 16px;
+  border-radius: 50%;
+}
+
+
+#clock {
+	margin-top: 4px;
+	margin-left: 16px;
+  margin-right: 16px;
+  color: #abe9b3;
+}
+
+#custom-wallpaper {
+	margin-left: 8px;
+  margin-right: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 50%;
+	transition: none;
+	background: #372736;
+  color: white;
+}
+
+#tray {
+	margin-left: 8px;
+  margin-right: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 50%;
+	background: #372736;
+}
+
+#bluetooth {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background: #372736;
+  border-radius: 8px;
+  color: white;
+}
+
+#bluetooth.on {
+  color: blue;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  border-radius: 50%;
+}
+
+#bluetooth.off {
+  border-radius: 50%;
+}
+
+#bluetooth.connected {
+  color: #59acff;
+}
+
+
+#custom-power {
+  font-size: 18px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 4px;
+	border-radius: 50%;
+  color: white;
+  background: red;
+}
+
+@keyframes blink {
+    to {
+        color: #ffffff;
+    }
+}
+
