@@ -1,0 +1,14 @@
+#!/bin/sh
+
+waybar &
+
+dunst &
+
+bash ~/.config/scripts/wallpaper_changer &
+
+nm-applet --indicator &
+
+swayidle -w \
+  timeout 300 ~/.config/scripts/idle_and_suspend \
+  timeout 245 ~/.config/scripts/idle_and_notify \
+  &

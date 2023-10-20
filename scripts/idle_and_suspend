@@ -1,0 +1,9 @@
+#!/bin/sh
+
+STATE=`awk 'NR==1{print $2}' ~/.config/scripts/data.txt`
+
+if [[ $STATE == "disabled" ]]; then
+  systemctl suspend
+  swaylock
+fi
+

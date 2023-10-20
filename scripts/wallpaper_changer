@@ -1,0 +1,6 @@
+#!/bin/sh
+
+wallpapers="$HOME/.config/backgrounds"
+
+killall -q swaybg
+swaybg -i $(find $wallpapers -type f | shuf -n 1) -m fill

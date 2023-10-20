@@ -1,0 +1,8 @@
+ignore-empty-password
+show-failed-attempts
+image=$(find ${HOME}/.config/backgrounds -type f | shuf -n 1)
+indicator-caps-lock
+font-size=30
+indicator-radius=150
+indicator-thickness=50
+line-uses-ring

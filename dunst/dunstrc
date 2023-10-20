@@ -1,0 +1,29 @@
+[global]
+    origin = top-center
+    offset = 10x30
+    corner_radius = 8
+    icon_theme = Papirus
+    show_age_threshold = 45
+    format = "<span size='large'><b>%s</b></span>\n%b"
+    font = Monospace 10
+    enable_recursive_icon_lookup = true
+
+[urgency_low]
+    background = "#eeeeff"
+    foreground = "#0000ff"
+    frame_color = "#eeeeff"
+    timeout = 10
+
+[urgency_normal]
+    background = "#eeeeff"
+    foreground = "#0000ff"
+    frame_color= "#eeeeff"
+    timeout = 10
+
+[urgency_critical]
+    background = "#ffeeee"
+    foreground = "#ff0000"
+    frame_color = "#ffeeee"
+    timeout = 60 
+ 
+

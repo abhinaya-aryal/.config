@@ -1,0 +1,20 @@
+#!/bin/sh
+
+choice=$(printf "  Lock\n  Logout\n󰒲  Suspend\n󰑙  Reboot\n  Shutdown" | fuzzel --dmenu)
+if [[ $choice == "  Lock" ]];then
+  sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt
+  swaylock
+elif [[ $choice == "  Logout" ]];then
+    sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt
+    pkill -KILL -u "$USER"
+elif [[ $choice == "󰒲  Suspend" ]];then
+    sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt
+    systemctl suspend
+    swaylock 
+elif [[ $choice == "󰑙  Reboot" ]];then
+    sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt
+    systemctl reboot
+elif [[ $choice == "  Shutdown" ]];then
+    sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt
+    systemctl poweroff
+fi
