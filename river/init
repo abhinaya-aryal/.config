@@ -1,29 +1,18 @@
 #!/bin/sh
 
-# The first parameter of our map is normal. This is the name of the mode of the keybind. Modes will be discussed later.
-# The second parameter is Mod4. This is the modifier. Mod4 is the canonical name of the modifier activated when pressing the super key (logo key), so putting it here simply means that we need to press and hold super when pressing the binded key.
-# Possible modifier are:
-# None -> No modifier
-# Shift
-# Lock -> CapsLock
-# Control
-# Mod1 -> Alt, "Meta"
-# Mod2 
-# Mod3
-# Mod4 -> Super, "Logo", "Windows"
-# Mod5 -> AltGr
+riverctl spawn waybar
 
-# We can combine multiple modifiers. For example, if we wanted to create a keybind where both super and shift need to be pressed, we can use Mod4+Shift as modifier parameter.
+riverctl spawn ~/.config/scripts/wallpaper_changer 
 
-# The third parameter is the name of the key we want to bind the action to. We can bind actions not just to alphanumeric keys but to  pretty much every key on our keyboard. And after the key, we can just specify the action we want to bind, just as if we were calling it directly.
+riverctl spawn "nm-applet --indicator" 
 
-# River allows for multiple distinct sets of keybinds, which is what modes are. The normal mode is river's default mode, the one that is initially active on start up.
-# River also defines a second mode, locked which is automatically entered when a screen locker is activated.
-
-# auto starting apps
-bash $HOME/.config/scripts/river_process
+riverctl spawn "swayidle -w \
+  timeout 300 ~/.config/scripts/idle_and_suspend \
+  timeout 245 ~/.config/scripts/idle_and_notify \
+"
 
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 
 riverctl map normal Super D spawn "fuzzel --show drun"
 
@@ -171,4 +160,4 @@ riverctl spawn "rivertile -outer-padding 2 -view-padding 2"
 
 sleep 1
 
-dunstify -u normal "Success!" "<span fgcolor='black'>River loaded successfully.</span>"
+notify-send -u normal "Success!" "<span fgcolor='black'>River loaded successfully.</span>"
