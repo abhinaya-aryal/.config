@@ -3,6 +3,43 @@
 This repository contains the configuration for my **arch linux** setup with **river** i.e. wayland compositor. Available key bindings and basic usage idea is provided in this readme file for future reference related to the configs...
 
 
+## Packages to install after installing arch linux
+
+- river
+
+- grim
+
+- slurp
+
+- greetd
+
+- waybar
+
+- fuzzel
+
+- dunst
+
+- mpv
+
+- light
+
+- playerctl
+
+- pamixer
+
+- yt-dlp
+
+- alacritty
+
+- brave 
+
+- ranger
+
+- snapshot
+
+
+
+
 
 ##  River
 
@@ -50,6 +87,61 @@ The one and only thing river wants to do on its own during startup is executing 
 
 - **Super + Return** = Bumps the focused window to the top of layout stack
 
+- **Super + H** = Decrease the main ratio of rivertile by 0.05
+
+- **Super + L** = Increase the main ration of rivertile by 0.05
+
+- **Super + Shift + H** = Decrease the main count of rivertile by 1
+
+- **Super + Shift + L** = Increase the main count of rivertile by 1
+
+- **Super + Alt + H** = Move focused window left by 100px
+
+- **Super + Alt + J** = Move focused window down by 100px
+
+- **Super + Alt + K** = Move focused window up by 100px
+
+- **Super + Alt + L** = Move focused window right by 100px
+
+- **Super + Alt + Control + H** = snap focused windows to left
+
+- **Super + Alt + Control + J** = snap focused windows to down
+
+- **Super + Alt + Control + K** = snap focused windows to up
+
+- **Super + Alt + Control + L** = snap focused windows to right
+
+- **Super + Alt + Shift + H** = decrease the horizontal size of focused window by 100px
+
+- **Super + Alt + Shift + J** = increase the vertical size of focused window by 100px
+
+- **Super + Alt + Shift + K** = decrease the vertical size of focused window by 100px
+
+- **Super + Alt + Shft + L** = increase the horizontal size of focused window by 100px
+
+- **Super + (1-9)** = Focuses the provided tag
+
+- **Super + Shift + (1-9)** = Changes the tag of focused window to provided tag
+
+- **Super + Control + (1-9)** = Focuses the provided tag too. Can focus multiple tag at once
+
+- **Super + Shift + Control + (1-9)** = Toggle the provided tag for focused window. Can assign multiple tag to single window
+
+- **Super + 0** = Focuses all tags i.e. (1-32)
+
+- **Super + Shift + 0** = Assign all (1-32) tag for the focused window. Focused window will be active on evey tags
+
+- **Super + Space** = Toggle float mode for focused window.
+
+- **Super + F** = Toggle fullscreen mode for focused window.
+
+- **Super + Up** = change layout orientation to main-location top
+
+- **Super + Right** = change layout orientation to main-location right
+
+- **Super + Down** = change layout orientation to main-location bottom
+
+- **Super + left** = change layout orientation to main-location left
 
 
 
