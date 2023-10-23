@@ -1,8 +1,10 @@
 #!/bin/sh
 
-riverctl spawn waybar
+riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 
 riverctl spawn ~/.config/scripts/wallpaper_changer 
+
+riverctl spawn waybar
 
 riverctl spawn "nm-applet --indicator" 
 
@@ -11,20 +13,16 @@ riverctl spawn "swayidle -w \
   timeout 245 ~/.config/scripts/idle_and_notify \
 "
 
-riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl map normal Super E spawn "bash ~/.config/scripts/power_menu" 
 
 riverctl map normal Super D spawn "fuzzel --show drun"
 
-riverctl map normal Super E spawn "bash ~/.config/scripts/power_menu" 
-
 # Screenshot
-riverctl map normal None Print spawn 'IMG=~/Pictures/Screenshots/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png&&grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && dunstify "Success!" "<span fgcolor=\"black\">Screenshot has been saved and copied to your clipboard.</span>" -u normal'
+riverctl map normal None Print spawn 'IMG=~/Pictures/Screenshots/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png&&grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && notify-send "Success!" "<span fgcolor=\"black\">Screenshot has been saved and copied to your clipboard.</span>" -u normal'
 
 riverctl map normal Control+Alt B spawn brave # to run browser
-riverctl map normal Control+Alt S spawn snapshot # to open camera
+riverctl map normal Control+Alt C spawn snapshot # to open camera
 riverctl map normal Control+Alt T spawn alacritty # to open terminal
-riverctl map normal Control+Alt C spawn "alacritty -e cmus" # To open music player
 riverctl map normal Control+Alt H spawn "alacritty -e ranger" # To open file explorer 
 
 
@@ -86,7 +84,7 @@ do
     riverctl map normal Super+Shift $i set-view-tags $tags
 
     # Super+Control+[1-9] to focus multiple tag at once
-   riverctl map normal Super+Control $i toggle-focused-tags $tags
+    riverctl map normal Super+Control $i toggle-focused-tags $tags
 
     # Super+Shift+Control+[1-9] to toggle the tag of focused view  
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
@@ -141,13 +139,11 @@ riverctl border-width 2
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
-
-
 # Set touchpad by grabbing the event
  touchpad="$(riverctl list-inputs | grep -i touchpad)"
   riverctl input $touchpad events enabled
   riverctl input $touchpad tap enabled
-  riverctl input $touchpad natural-scroll disabled 
+  riverctl input $touchpad natural-scroll enabled
   riverctl input $toucppad drag enabled
 
 # riverctl focus-follows-cursor normal

@@ -14,7 +14,7 @@
 -- to set check_certificate to false, otherwise wget.exe might not be able to
 -- download the youtube website.
 
-local mp = require("mp")
+--[[ local mp = require("mp")
 local utils = require("mp.utils")
 local msg = require("mp.msg")
 local assdraw = require("mp.assdraw")
@@ -1499,4 +1499,4 @@ local function json_lua()
 	-- ######################### End of json.lua ##############################
 	return json
 end
-json = json_lua()
+json = json_lua() ]]

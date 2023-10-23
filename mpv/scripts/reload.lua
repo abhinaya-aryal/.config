@@ -58,7 +58,7 @@
 -- option to make the debug logs visible if you are using a dark colorscheme
 -- in terminal.
 
-local msg = require("mp.msg")
+--[[ local msg = require("mp.msg")
 local options = require("mp.options")
 local utils = require("mp.utils")
 
@@ -400,4 +400,4 @@ if settings.reload_eof_enabled then
 	mp.observe_property("eof-reached", "bool", reload_eof)
 end
 
-mp.register_event("file-loaded", on_file_loaded)
+mp.register_event("file-loaded", on_file_loaded) ]]

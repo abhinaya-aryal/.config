@@ -13,7 +13,7 @@ https://github.com/Samillion/mpv-ytdlautoformat
 
 --]]
 
-local function Set(t)
+--[[ local function Set(t)
 	local set = {}
 	for _, v in pairs(t) do
 		set[v] = true
@@ -83,4 +83,4 @@ local function ytdlCheck()
 	end
 end
 
-mp.register_event("start-file", ytdlCheck)
+mp.register_event("start-file", ytdlCheck) ]]
