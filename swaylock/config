@@ -6,3 +6,4 @@ font-size=30
 indicator-radius=150
 indicator-thickness=50
 line-uses-ring
+scaling=fill
