@@ -9,8 +9,8 @@ riverctl spawn waybar
 riverctl spawn "nm-applet --indicator" 
 
 riverctl spawn "swayidle -w \
-  timeout 300 ~/.config/scripts/idle_and_suspend \
-  timeout 245 ~/.config/scripts/idle_and_notify \
+  timeout 480 ~/.config/scripts/idle_and_suspend \
+  timeout 420 ~/.config/scripts/idle_and_notify \
 "
 
 riverctl map normal Super E spawn "bash ~/.config/scripts/power_menu" 

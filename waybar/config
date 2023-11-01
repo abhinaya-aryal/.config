@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","memory","battery", "backlight", "pulseaudio"],
 	"modules-center": ["river/tags"],
-	"modules-right": ["custom/updates", "clock", "custom/wallpaper", "tray", "bluetooth", "custom/power"],
+	"modules-right": ["custom/updates", "custom/caffeine_en", "custom/caffeine_dis", "clock", "custom/wallpaper", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
         "format": "",

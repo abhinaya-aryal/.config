@@ -1,1 +1,1 @@
-caffeine: disabled
+caffeine: enabled
