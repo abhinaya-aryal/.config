@@ -1,5 +1,5 @@
-vim.g.mapleader = " " -- space key as mapleader key
-vim.g.maplocalleader = " " -- space key as local map leader too
+vim.g.mapleader = " " -- space key as leader key
+vim.g.maplocalleader = " " -- space key as local leader too
 vim.g.loaded_netrw = 1 --disable default file explorer
 vim.g.loaded_netrwPlugin = 1
 
@@ -42,7 +42,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 100 -- used for the cursorhold autocommand event
 vim.opt.wildmode = "longest:full"
 
--- diagnostic related config
+-- INFO: diagnostic related config
 vim.diagnostic.config({
 	virtual_text = false,
 	severity_sort = true,

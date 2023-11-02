@@ -47,7 +47,7 @@ return {
 			pattern = "LazyVimStarted",
 			callback = function()
 				local stats = lazy.stats()
-				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+				local ms = math.floor(stats.startuptime + 0.5) -- round off
 				local version = " v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
 				local fortune = require("alpha.fortune")
 				local quote = table.concat(fortune(), "\n")

@@ -12,14 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-	ui = {
-		border = "rounded",
-		title = "Plugins Manager",
-	},
 	defaults = {
 		lazy = true,
 	},
-	install = { missing = true, colorscheme = { "tokyonight" } },
 	checker = { enabled = true, frequency = 72000 }, -- automatically check for plugin updates
 	performance = {
 		rtp = {
