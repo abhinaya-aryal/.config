@@ -14,7 +14,7 @@
 -- to set check_certificate to false, otherwise wget.exe might not be able to
 -- download the youtube website.
 
---[[ local mp = require("mp")
+local mp = require("mp")
 local utils = require("mp.utils")
 local msg = require("mp.msg")
 local assdraw = require("mp.assdraw")
@@ -22,8 +22,8 @@ local assdraw = require("mp.assdraw")
 local opts = {
 	--key bindings
 	toggle_menu_binding = "ctrl+u",
-	up_binding = "UP",
-	down_binding = "DOWN",
+	up_binding = "k",
+	down_binding = "j",
 	select_binding = "ENTER",
 	append_binding = "SPACE",
 	close_binding = "ESC",
@@ -41,7 +41,7 @@ local opts = {
 	cursor_appended_selected = "▶ ",
 
 	--font size scales by window, if false requires larger font and padding sizes
-	scale_playlist_by_window = false,
+	scale_playlist_by_window = true,
 
 	--playlist ass style overrides inside curly brackets, \keyvalue is one field, extra \ for escape in lua
 	--example {\\fnUbuntu\\fs10\\b0\\bord1} equals: font=Ubuntu, size=10, bold=no, border=1
@@ -1499,4 +1499,4 @@ local function json_lua()
 	-- ######################### End of json.lua ##############################
 	return json
 end
-json = json_lua() ]]
+json = json_lua()

@@ -321,7 +321,7 @@ function scroll_list:new()
 
 		keybinds = {
 			{
-				"DOWN",
+				"j",
 				"scroll_down",
 				function()
 					vars:scroll_down()
@@ -329,7 +329,7 @@ function scroll_list:new()
 				{ repeatable = true },
 			},
 			{
-				"UP",
+				"k",
 				"scroll_up",
 				function()
 					vars:scroll_up()

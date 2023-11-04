@@ -407,7 +407,7 @@ end
 
 mp.add_key_binding("Ctrl+y", "yt", open_search_input)
 
-mp.add_key_binding("Y", "youtube-search", function()
+mp.add_key_binding("y", "youtube-search", function()
 	if not list.hidden then
 		open_search_input()
 	else

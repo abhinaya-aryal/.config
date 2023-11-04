@@ -5,19 +5,21 @@ This repository contains the configuration for my **arch linux** setup with **ri
 
 ## Packages to install after installing arch linux
 
+- alacritty
+
 - river
 
 - grim
 
 - slurp
 
-- greetd
+- greetd (need to set up)
 
 - waybar
 
 - fuzzel
 
-- dunst
+- dunst 
 
 - mpv
 
@@ -37,8 +39,13 @@ This repository contains the configuration for my **arch linux** setup with **ri
 
 - snapshot
 
+- libva-intel-driver
 
+- libva-mesa-driver
 
+- nvim
+
+- zathura
 
 
 ##  River
@@ -144,40 +151,39 @@ The one and only thing river wants to do on its own during startup is executing 
 - **Super + left** = change layout orientation to main-location left
 
 
+## mpv 
 
-### 1.1 Waybar
+***mpv*** is a free i.e. open source media player for the command line. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.
 
-**Waybar** is a highly customizable Wayland bar for Sway and Wlroots based compostiors.
+### File-broser specific
 
+- **Menu** = toggles the browser
 
+- **Ctrl + O** = opens the browser
 
-### 1.2 Dunst
+- **Alt + O** = opens a dialogue box to type in a directory
 
-**Dunst** is a lightweight replacement for the notification-daemons provided by most desktop environments. An example configuration file is included at `/etc/dunst/dunstrc`. Place your configuration on `/.config/dunst/dunstrc` file. Launch `dusnt` and make sure your window manager or desktop environments starts it on startup/login.
+- **Esc** = closes the browser or clears the selection
 
+- **Enter** = plays the currently selected file or folder
 
+- **Shift + Enter** = appends the current file or folder to the playlist
 
+- **Alt + Enter** = loads the playlist entries before and after the selected file (like autoload.lua)
 
+- **L** = enter the currently selected directory
 
+- **Backspace** = move to the parent directory
 
-### 1.2 Fuzzel
-
-**Fuzzel** is a Wayland-native application launcher that is similar to rofi's drun mode. It is a versatile app and utility launcher. Besides launching applications, as a dmenu alternative Fuzzel can be used for many utility tasks. These include:
-
-- Emoji picker with **bemoji**
-- Password picker, with **dmenu-lpass**
-- TOTP MFA code picker, with **yubikey-oath-dmenu**
-- Clipboard picker, with **clipman**
-- Download picker, with **dmenufm**
-- Picking a window, output, or workspace to switch to with **swayr**
-
-Configuration should be placed at `~/.config/fuzzel/fuzzel.ini`.
+- **Home** = move to the directory of the currently palying file
 
 
+### Youtube Search
 
+- **Ctrl + Y** = open youtube search input
 
+- **Y** = opens youtube search input or shows searched list 
 
+- **Ctrl + u** = Toggle the youtube recommended video list 
 
-## Alacritty
-
-Alacritty is the terminal emulator for my arch linux setup.
+- **Space** = Append the current video to playlist

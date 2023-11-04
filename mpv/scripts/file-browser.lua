@@ -1858,10 +1858,10 @@ state.keybinds = {
 		end,
 	},
 	{ "ESC", "close", escape },
-	{ "RIGHT", "down_dir", down_dir },
-	{ "LEFT", "up_dir", up_dir },
+	{ "l", "down_dir", down_dir },
+	{ "BS", "up_dir", up_dir },
 	{
-		"DOWN",
+		"j",
 		"scroll_down",
 		function()
 			scroll(1, o.wrap)
@@ -1869,7 +1869,7 @@ state.keybinds = {
 		{ repeatable = true },
 	},
 	{
-		"UP",
+		"k",
 		"scroll_up",
 		function()
 			scroll(-1, o.wrap)
