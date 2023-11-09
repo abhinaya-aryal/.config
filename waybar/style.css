@@ -29,11 +29,19 @@ window#waybar.hidden {
   color: white;
 }
 
-#memory, #battery, #backlight, #pulseaudio {
+#memory, #battery, #backlight, #pulseaudio, #temperature {
 	margin-top: 4px;
 	margin-left: 8px;
   margin-right: 8px;
   color: white;
+}
+
+#temperature {
+  color: #F28FAD; 
+}
+
+#temperature.critical {
+  color: red;
 }
 
 #battery.good {
@@ -46,6 +54,11 @@ window#waybar.hidden {
 
 #battery.low {
   color: red;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.charging, #battery.plugged {

@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","cpu","memory","battery", "backlight", "pulseaudio"],
+	"modules-left": ["custom/launcher","cpu","memory","temperature","battery", "backlight", "pulseaudio"],
 	"modules-center": ["river/tags"],
 	"modules-right": ["custom/updates", "custom/caffeine_en", "custom/caffeine_dis", "clock", "custom/wallpaper", "tray", "bluetooth", "custom/power"],
 
@@ -21,6 +21,12 @@
         "format": " {used}G",
         "max-length": 10
     },
+    "temperature": {
+      "critical-threshold": 90,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", ""],
+      "tooltip": false,
+    },
 
 "battery": {
         "interval": 2,
@@ -32,7 +38,7 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
 "backlight": {
@@ -141,5 +147,6 @@
         "format": "⏻ ",
         "tooltip": false,
         "on-click": "bash ~/.config/scripts/power_menu",
+        "on-click-right": "killall fuzzel",
     },
   }

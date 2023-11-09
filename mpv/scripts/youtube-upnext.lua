@@ -90,7 +90,7 @@ local opts = {
 	-- When a video is selected from the menu, the new video can be appended to the playlist
 	-- or the playlist can be cleared and replaced with only the selected video.
 	-- If true, the video will be appended to the playlist. If false, the playlist will be cleared.
-	keep_playlist_on_select = true,
+	keep_playlist_on_select = false,
 
 	-- What should happen if a video recommendation in uosc menu is clicked? Options are:
 	-- 'submenu'  -- show a submenu with play/upnext/append option
@@ -98,7 +98,7 @@ local opts = {
 	-- 'insert'   -- play the video after the current video
 	-- 'play'     -- append the video to the playlist and play it
 	-- 'replace'  -- play the video and clear the playlist
-	uosc_entry_action = "submenu",
+	uosc_entry_action = "replace",
 
 	-- Should the uosc menu stay open after clicking a video recommendation
 	uosc_keep_menu_open = false,
