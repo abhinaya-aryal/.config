@@ -35,7 +35,7 @@ This repository contains the configuration for my **arch linux** setup with **ri
 
 - brave 
 
-- ranger
+- ranger (need to go through github repo)
 
 - snapshot
 
@@ -155,8 +155,6 @@ The one and only thing river wants to do on its own during startup is executing 
 
 ***mpv*** is a free i.e. open source media player for the command line. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.
 
-### File-broser specific
-
 - **Menu** = toggles the browser
 
 - **Ctrl + O** = opens the browser
@@ -176,9 +174,6 @@ The one and only thing river wants to do on its own during startup is executing 
 - **Backspace** = move to the parent directory
 
 - **Home** = move to the directory of the currently palying file
-
-
-### Youtube Search
 
 - **Ctrl + Y** = open youtube search input
 

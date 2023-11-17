@@ -13,13 +13,11 @@
 
 "cpu": {
        "format": " {}%",
-       "max-length": 10
     },
 
 "memory": {
         "interval": 5,
-        "format": " {used}G",
-        "max-length": 10
+        "format": " {}%",
     },
     "temperature": {
       "critical-threshold": 90,
