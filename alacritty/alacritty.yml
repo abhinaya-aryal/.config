@@ -1,15 +1,15 @@
 window:
   decorations: none
   startup_mode: Maximized
-  opacity: 0.8
+  opacity: 0.9
   padding:
     x: 4
     y: 4
 
 font:
-  normal:
-    family: JetBrainsMono Nerd Font
-    style: Regular
+  # normal:
+    # family: JetBrainsMono Nerd Font
+    # style: Regular
   size: 12
 
 colors:

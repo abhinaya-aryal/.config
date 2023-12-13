@@ -1,8 +1,8 @@
 {
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","memory","temperature","battery", "backlight", "pulseaudio"],
-	"modules-center": ["river/tags"],
-	"modules-right": ["custom/updates", "custom/caffeine_en", "custom/caffeine_dis", "clock", "custom/wallpaper", "tray", "bluetooth", "custom/power"],
+	"modules-center": ["hyprland/workspaces", "hyprland/window"],
+	"modules-right": ["custom/updates", "custom/caffeine_en", "custom/caffeine_dis", "clock", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
         "format": "",
@@ -58,10 +58,6 @@
 			"default": ["", "󰕾", ""]
 		}
 	},
-
-"river/tags": {
-          "num-tags": 9
-    },
 		    
 "custom/updates":{
         "tooltip": false,
@@ -114,11 +110,6 @@
                     },
      },
 
-"custom/wallpaper":{
-        "format":" ",
-        "on-click": "bash ~/.config/scripts/wallpaper_changer",
-        "tooltip": false,
-    },
     
 "tray":{
 		"icon-size":18,

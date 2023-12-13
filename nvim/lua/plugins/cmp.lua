@@ -18,11 +18,10 @@ return {
 		{ "onsails/lspkind.nvim" },
 	},
 	config = function()
-		-- INFO:This relates to the luasnip and friendly-snippets plugin
 		require("luasnip.loaders.from_vscode").lazy_load()
-		-- INFO: Used in multiple place so placed in local variable
+
 		local snippet = require("luasnip")
-		-- INFO: local variable used in formatting attribute of cmp setup
+
 		local source_mapping = {
 			buffer = "[Buffer]",
 			nvim_lsp = "[LSP]",
@@ -37,7 +36,6 @@ return {
 			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 		end
 
-		-- INFO: configuration for tabnine color in completion popup
 		vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#6CC644" })
 
 		-- INFO: real configuration cmp

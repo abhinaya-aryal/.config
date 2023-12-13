@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "VeryLazy",
+	event = "BufEnter",
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons" },
 	},
@@ -14,7 +14,7 @@ return {
 				end,
 				show_buffer_close_icons = false,
 				offsets = { { filetype = "NvimTree", text = "File Explorer" } },
-				separator_style = "thin",
+				separator_style = "thick",
 			},
 		})
 	end,
