@@ -1,13 +1,13 @@
 # My Config for Arch Linux
 
-This repository contains the configuration for my **arch linux** setup with **river** i.e. wayland compositor. Available key bindings and basic usage idea is provided in this readme file for future reference related to the configs...
+This repository contains the configuration for my **arch linux** setup with **Hyprland** i.e. wayland compositor. Available key bindings and basic usage idea is provided in this readme file for future reference related to the configs...
 
 
 ## Packages to install after installing arch linux
 
 - alacritty
 
-- river
+- hyprland 
 
 - grim
 
@@ -21,17 +21,15 @@ This repository contains the configuration for my **arch linux** setup with **ri
 
 - dunst 
 
-- mpv
-
-- light
+- brightnessctl
 
 - playerctl
 
 - pamixer
 
-- yt-dlp
+- mpv
 
-- alacritty
+- yt-dlp
 
 - brave 
 
@@ -47,20 +45,21 @@ This repository contains the configuration for my **arch linux** setup with **ri
 
 - zathura
 
+- libreoffice-fresh
 
-##  River
+- neofetch
 
-***river*** is a wlroots-based Wayland dynamic tiling compositor. River is installed with the `river` package or AUR git package `river-git`.
 
-When you have installed river, **riverctl** and **rivertile** are also installed automatically.
+##  Hyprland
 
-If you prefer to have a fancy graphical login prompt you will need to use a display manager. A fine alternative to the classical display managers is **[`greetd`](https://git.sr.ht/~kennylevinsen/greetd)**, which allows to have graphical login prompt as well as auto-login.
+***hyprland*** is a wlroots-based Wayland dynamic tiling compositor. Hyprland is installed with the `hyprland` package or AUR git package `hyprland-git`.
 
-The one and only thing river wants to do on its own during startup is executing a file at `~/.config/river/init`. This file usually is a executable shell script and will be your starting point for getting river to behave like you want.
+When you have installed river, **hyprctl** is also installed automatically.
 
-**riverctl** is a little companion program which can be used to send commands to river. 
+Configuration is done throught a single configuration file, `~/.config/hypr/hyprland.conf`, though it supports splitting the configuration into multiple files.
 
-**rivertile** is a layout generator for river. It provides a simple tiled layout with split main/secondary stacks. The initial state may be configured with various options passed on startup. Some values may additionally be modified while rivertile is running with the help of ***riverctl***.
+**hyprctl** is a little companion program which can be used to send commands to Hyprland. 
+
 
 - **Super + E** = shows power menu which is a custom shell script ---> `~/.config/scripts/power_menu`
 

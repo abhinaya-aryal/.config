@@ -14,7 +14,7 @@ return {
 				end,
 				show_buffer_close_icons = false,
 				offsets = { { filetype = "NvimTree", text = "File Explorer" } },
-				separator_style = "thick",
+				separator_style = "thin",
 			},
 		})
 	end,

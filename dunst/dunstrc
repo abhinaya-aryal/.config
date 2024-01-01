@@ -1,24 +1,25 @@
 [global]
     enable_posix_regex = true
+    gap_size = 10
     origin = top-center
     offset = 10x30
     corner_radius = 8
     icon_theme = "Papirus, Adwaita"
     show_age_threshold = 45
     format = "<span size='large'><b>%s</b></span>\n%b"
-    font = Monospace 10
+    font = Monospace 8 
     enable_recursive_icon_lookup = true
 
 [urgency_low]
-    background = "#eeeeff"
-    foreground = "#0000ff"
-    frame_color = "#eeeeff"
+    background = "#494f55"
+    foreground = "#eeeeff"
+    frame_color = "#494f55"
     timeout = 10
 
 [urgency_normal]
-    background = "#eeeeff"
-    foreground = "#0000ff"
-    frame_color= "#eeeeff"
+    background = "#494f55"
+    foreground = "#eeeeff"
+    frame_color= "#494f55"
     timeout = 10
 
 [urgency_critical]
@@ -26,3 +27,7 @@
     foreground = "#ff0000"
     frame_color = "#ffeeee"
     timeout = 60 
+
+# [play_sound]
+#   summary = ".*"
+#   script = ~/.config/hypr/scripts/alert.sh

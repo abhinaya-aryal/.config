@@ -1,13 +1,13 @@
 {
 	"layer": "top",
+  "position": "top",
 	"modules-left": ["custom/launcher","cpu","memory","temperature","battery", "backlight", "pulseaudio"],
-	"modules-center": ["hyprland/workspaces", "hyprland/window"],
-	"modules-right": ["custom/updates", "custom/caffeine_en", "custom/caffeine_dis", "clock", "tray", "bluetooth", "custom/power"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["hyprland/workspaces", "clock", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
         "format": "",
-        "on-click": "fuzzel --show drun",
-        "on-click-right": "killall fuzzel",
+        "on-click": "sleep 0.15 && fuzzel --show drun",
         "tooltip": false,
     },
 
@@ -17,9 +17,10 @@
 
 "memory": {
         "interval": 5,
-        "format": " {}%",
+        "format": " {used}G",
     },
-    "temperature": {
+
+"temperature": {
       "critical-threshold": 90,
       "format": "{icon} {temperatureC}°C",
       "format-icons": ["", ""],
@@ -58,34 +59,9 @@
 			"default": ["", "󰕾", ""]
 		}
 	},
-		    
-"custom/updates":{
-        "tooltip": false,
-        "format": "{} ",
-        "exec": "bash ~/.config/scripts/system_update",
-        "interval": 3600,
-        "on-click": "alacritty -e paru -Syu --noconfirm && notify-send -u normal \"Success!\" \"<span fgcolor='black'>The system has been updated successfully.</span>\"",
-        "exec-on-event": true
-    },
 
-"custom/caffeine_dis": {
-    "format": "{}",
-    "exec": "echo '󰾪'",
-    "exec-if": "[[ $(cat ~/.config/scripts/data.txt | awk 'NR==1{print $2}') == 'disabled' ]]", 
-    "exec-on-event": true,
-    "on-click": "sed -i '1s/disabled/enabled/' ~/.config/scripts/data.txt && notify-send -u normal \"Success!\" \"<span fgcolor='black'>Caffeine is enabled successfully.</span>\"",
-    "interval": 1,
-    "tooltip":false,
-  },
-
-"custom/caffeine_en": {
-    "format": "{}",
-    "exec": "echo ''",
-    "exec-if": "[[ $(cat ~/.config/scripts/data.txt | awk 'NR==1{print $2}') == 'enabled' ]]",
-    "exec-on-event": true,
-    "on-click": "sed -i '1s/enabled/disabled/' ~/.config/scripts/data.txt && notify-send -u normal \"Success!\" \"<span fgcolor='black'>Caffeine is disabled successfully.</span>\"",
-    "interval": 1,
-    "tooltip":false,
+  "hyprland/window": {
+    "max-length": 70,
   },
 
 "clock": {
@@ -128,14 +104,13 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "max-length": 15,
-    "on-click": "bash ~/.config/scripts/toggle_bluetooth"
+    "on-click": "bash ~/.config/hypr/scripts/toggle_bluetooth"
   },
 
      
 "custom/power":{
         "format": "⏻ ",
         "tooltip": false,
-        "on-click": "bash ~/.config/scripts/power_menu",
-        "on-click-right": "killall fuzzel",
+        "on-click": "sleep 0.15 && bash ~/.config/hypr/scripts/power_menu",
     },
   }

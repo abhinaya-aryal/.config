@@ -1,0 +1,16 @@
+#!/bin/sh
+
+choice=$(printf "  Lock\n  Kill User\n󰒲  Suspend\n󰑙  Reboot\n  Shutdown" | fuzzel --dmenu)
+
+if [[ $choice == "  Lock" ]];then
+  swaylock
+elif [[ $choice == "  Kill User" ]];then
+  pkill -KILL -u "$USER"
+elif [[ $choice == "󰒲  Suspend" ]];then
+  systemctl suspend
+  swaylock 
+elif [[ $choice == "󰑙  Reboot" ]];then
+  systemctl reboot
+elif [[ $choice == "  Shutdown" ]];then
+  systemctl poweroff
+fi

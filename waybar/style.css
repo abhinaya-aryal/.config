@@ -6,7 +6,7 @@
 
 window#waybar {
 	background: black;
-}
+  }
 
 window#waybar.hidden {
 	opacity: 0.2;
@@ -81,74 +81,36 @@ window#waybar.hidden {
   color: white;
 }
 
-
-#tags {
+#workspaces{
 	background: #372736; 
-  border-radius: 4px;
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
-#tags button {
-	color: #B5E8E0;
-}
-
-#tags button.occupied {
+#workspaces button{
 	color: #F28FAD;
 }
 
-#tags button.focused {
-  	color: gold;
-    border-top: 2px solid gold;
-    border-bottom: 2px solid gold;
+#workspaces button.active{
+  color: black;
+  background: #cc7dff;
 }
 
-#tags button:hover {
+#workspaces button.empty {
+	color: black;
+}
+
+#workspaces button:hover {
 	transition: none;
 	box-shadow: inherit;
 	text-shadow: inherit;
 	color: #FAE3B0;
 }
 
-#tags button.focused:hover {
+#workspaces button.active:hover {
   color: #E8A2AF;
-  border-top: 2px solid #E8A2AF;
-  border-bottom: 2px solid #E8A2AF;
 }
-
-#custom-updates {
-  margin-right: 8px;
-  animation-name: blink;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: red;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: #372736;
-  border-radius: 8px;
-}
-
-#custom-caffeine_dis {
-  font-size: 18px;
-  margin-left: 8px;
-  margin-right: 8px;
-  padding-left: 10px;
-  padding-right: 16px;
-  background: white;
-  color: black;
-  border-radius: 50%;
-}
-
-#custom-caffeine_en {
-  font-size: 18px;
-  background: orange;
-  margin-left: 8px;
-  margin-right: 8px;
-  padding-left: 10px;
-  padding-right: 16px;
-  border-radius: 50%;
-} 
-
 
 #clock {
 	margin-top: 4px;
@@ -157,22 +119,10 @@ window#waybar.hidden {
   color: #abe9b3;
 }
 
-#custom-wallpaper {
-	margin-left: 8px;
-  margin-right: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 50%;
-	transition: none;
-	background: #372736;
-  color: white;
-}
-
 #tray {
 	margin-left: 8px;
   margin-right: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 10px;
 	border-radius: 50%;
 	background: #372736;
 }
