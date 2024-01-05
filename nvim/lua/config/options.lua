@@ -42,12 +42,6 @@ vim.opt.undofile = true
 vim.opt.updatetime = 100 -- used for the cursorhold autocommand event
 vim.opt.wildmode = "longest:full"
 
--- INFO: diagnostic related config
-vim.diagnostic.config({
-	virtual_text = false,
-	severity_sort = true,
-})
-
 -- NOTE: Vertically center document when entering insert mode
 vim.api.nvim_create_autocmd({ "InsertEnter" }, {
 	command = "norm zz",
@@ -57,7 +51,3 @@ vim.api.nvim_create_autocmd({ "InsertEnter" }, {
 vim.g.mkdp_echo_preview_url = 1
 vim.g.mkdp_auto_start = 1
 vim.g.mkdp_auto_close = 1
-
--- NOTE: required by vimtex
-vim.g.vimtex_view_method = "zathura"
-vim.g.vimtex_syntax_enabled = 0
