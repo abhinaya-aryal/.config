@@ -1,8 +1,0 @@
-#!/bin/sh
-
-STATE=`awk 'NR==1{print $2}' ~/.config/scripts/data.txt`
-
-if [[ $STATE == "disabled" ]]; then
-  dunstify -u critical 'Suspend!' '<span fgcolor=\"black\">About to lock in a minute.</span>'
-fi
-

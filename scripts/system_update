@@ -1,8 +1,0 @@
-#!/bin/sh
-
-UPDATE=`checkupdates | wc -l`
-
-if [[ $UPDATE != 0 ]]; then
-  UPDATE+=" "
-  echo -n $UPDATE  
-fi
