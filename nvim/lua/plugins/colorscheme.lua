@@ -1,11 +1,15 @@
 return {
-	"catppuccin/nvim",
+	"navarasu/onedark.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("catppuccin").setup({
-			transparent_background = true,
+		require("onedark").setup({
+			style = "cool", -- dark | darker | deep | cool | warm | warmer
+			transparent = true,
+			lualine = {
+				transparent = true,
+			},
 		})
-		vim.cmd.colorscheme("catppuccin-mocha")
+		vim.cmd.colorscheme("onedark")
 	end,
 }
