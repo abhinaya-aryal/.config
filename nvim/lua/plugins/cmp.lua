@@ -2,7 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "ModeChanged",
 	dependencies = {
-		{ "neovim/nvim-lspconfig" },
 		{ "hrsh7th/cmp-nvim-lsp" },
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-path" },
@@ -13,7 +12,6 @@ return {
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "tzachar/cmp-tabnine", build = "./install.sh" },
 		{ "petertriho/cmp-git" },
-		{ "jcha0713/cmp-tw2css" },
 		{ "rafamadriz/friendly-snippets" },
 		{ "onsails/lspkind.nvim" },
 	},
@@ -93,12 +91,12 @@ return {
 
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "nvim_lsp_signature_help" },
+				{ name = "luasnip" },
 				{ name = "nvim_lua" },
 				{ name = "cmp_tabnine" },
-				{ name = "cmp-tw2css" },
+				-- { name = "cmp-tw2css" },
 			}),
 
 			formatting = {

@@ -20,10 +20,10 @@ return {
 		end
 
 		-- NOTE: Rounded border for floats
-		vim.lsp.handlers["textDocument/hover"] =
-			vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", title = "hover" })
-		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", title = "signature" })
+		-- vim.lsp.handlers["textDocument/hover"] =
+		-- vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", title = "hover" })
+		-- vim.lsp.handlers["textDocument/signatureHelp"] =
+		-- vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", title = "signature" })
 
 		-- NOTE: Diagnostic related global config
 		vim.diagnostic.config({
@@ -40,11 +40,11 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
 			vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = bufnr })
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr })
-			vim.keymap.set("n", "ld", vim.diagnostic.open_float, {})
-			vim.keymap.set("n", "nd", vim.diagnostic.goto_next, {})
-			vim.keymap.set("n", "pd", vim.diagnostic.goto_prev, {})
-			vim.keymap.set("n", "lr", vim.lsp.buf.rename, { buffer = bufnr })
-			vim.keymap.set("n", "la", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, {})
+			vim.keymap.set("n", "<leader>nd", vim.diagnostic.goto_next, {})
+			vim.keymap.set("n", "<leader>pd", vim.diagnostic.goto_prev, {})
+			vim.keymap.set("n", "<leader>rl", vim.lsp.buf.rename, { buffer = bufnr })
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 		end
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()

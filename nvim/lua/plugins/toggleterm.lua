@@ -4,16 +4,18 @@ return {
 	config = function()
 		require("toggleterm").setup({
 			open_mapping = [[<c-\>]],
-			size = 6,
-			hide_numbers = true,
+			hide_numbers = false,
 			insert_mapping = true,
 			terminal_mappings = true,
-			direction = "horizontal",
+			direction = "float",
 			close_on_exit = true,
 			autochdir = true,
 			shell = vim.o.shell,
 			winbar = {
 				enabled = true,
+			},
+			float_opts = {
+				border = "curved",
 			},
 		})
 

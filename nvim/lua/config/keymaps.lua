@@ -41,3 +41,6 @@ vim.keymap.set("i", "<a-j>", "<Esc>:m .+1<CR>==gi", opts)
 vim.keymap.set("i", "<a-k>", "<Esc>:m .-2<CR>==gi", opts)
 vim.keymap.set("v", "<a-j>", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "<a-k>", ":m '<-2<CR>gv=gv", opts)
+
+-- INFO: Esc to clear all the highlighted search
+vim.keymap.set("n", "<ESC>", ":noh<cr>", opts)
