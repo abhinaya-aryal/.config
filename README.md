@@ -7,6 +7,8 @@ This repository contains the configuration for my **arch linux** setup with **Hy
 
 - alacritty
 
+- fish
+
 - hyprland 
 
 - grim
@@ -148,6 +150,7 @@ Configuration is done throught a single configuration file, `~/.config/hypr/hypr
 - **Super + Down** = change layout orientation to main-location bottom
 
 - **Super + left** = change layout orientation to main-location left
+
 
 
 ## mpv 
