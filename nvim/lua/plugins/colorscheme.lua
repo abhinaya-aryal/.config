@@ -4,7 +4,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("onedark").setup({
-			style = "cool", -- dark | darker | deep | cool | warm | warmer
+			style = "deep", -- dark | darker | deep | cool | warm | warmer
 			transparent = true,
 			lualine = {
 				transparent = true,

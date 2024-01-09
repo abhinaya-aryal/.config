@@ -25,6 +25,7 @@ vim.opt.pumblend = 15 -- popup blend
 vim.opt.pumheight = 15 -- Maximum number of entries in a popup
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.scrolloff = 999 -- Lines of context
+vim.opt.shell = "/bin/fish"
 vim.opt.shiftwidth = 2 -- size of an indent
 vim.opt.shiftround = true -- better indentation support
 vim.opt.shortmess:append({ c = true }) -- to autoconfirm short messages related to files
