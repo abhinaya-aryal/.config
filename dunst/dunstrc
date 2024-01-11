@@ -1,3 +1,5 @@
+# vim: set filetype=cfg :
+
 [global]
     enable_posix_regex = true
     gap_size = 10
@@ -28,6 +30,3 @@
     frame_color = "#ffeeee"
     timeout = 60 
 
-# [play_sound]
-#   summary = ".*"
-#   script = ~/.config/hypr/scripts/alert.sh

@@ -46,6 +46,13 @@ return {
 			},
 			extensions = {
 				file_browser = {
+					cwd_to_path = true,
+					hijack_netrw = true,
+					hidden = {
+						file_browser = true,
+						folder_browser = true,
+					},
+					no_ignore = true,
 					mappings = {
 						["n"] = {
 							["c"] = fb_actions.create,

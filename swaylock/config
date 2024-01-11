@@ -1,3 +1,5 @@
+# vim: set filetype=cfg :
+
 ignore-empty-password
 show-failed-attempts
 daemonize

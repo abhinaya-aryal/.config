@@ -29,7 +29,7 @@ local opts = {
 	close_binding = "ESC",
 
 	--auto fetch recommended videos when opening a url
-	fetch_on_start = true,
+	fetch_on_start = false,
 
 	--auto load and add the "upnext" video to the playlist
 	auto_add = true,
@@ -90,7 +90,7 @@ local opts = {
 	-- When a video is selected from the menu, the new video can be appended to the playlist
 	-- or the playlist can be cleared and replaced with only the selected video.
 	-- If true, the video will be appended to the playlist. If false, the playlist will be cleared.
-	keep_playlist_on_select = false,
+	keep_playlist_on_select = true,
 
 	-- What should happen if a video recommendation in uosc menu is clicked? Options are:
 	-- 'submenu'  -- show a submenu with play/upnext/append option
@@ -98,7 +98,7 @@ local opts = {
 	-- 'insert'   -- play the video after the current video
 	-- 'play'     -- append the video to the playlist and play it
 	-- 'replace'  -- play the video and clear the playlist
-	uosc_entry_action = "replace",
+	uosc_entry_action = "play",
 
 	-- Should the uosc menu stay open after clicking a video recommendation
 	uosc_keep_menu_open = false,
