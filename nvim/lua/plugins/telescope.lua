@@ -52,7 +52,7 @@ return {
 						file_browser = true,
 						folder_browser = true,
 					},
-					no_ignore = true,
+					-- no_ignore = true,
 					mappings = {
 						["n"] = {
 							["c"] = fb_actions.create,
