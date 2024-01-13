@@ -1,0 +1,7 @@
+To change the default shell for the user:                      usermod -s <SHELL> <username>                            sudo usermod -s /bin/fish abhinaya
+
+To determine mimetype of a fle:                             xdg-mime query filetype <filename>                          xdg-mime query filetype photo.jpeg
+i
+To determine default application for mimetype:                 xdg-mime default <mimetype>                              xdg-mime default image/png  
+
+To change the default application for a mimetype:       xdg-mime default <*.desktop> <mimetype>                         xdg-mime default ranger.desktop inode/directory

@@ -4,18 +4,21 @@ return {
 	config = function()
 		local diagnostics = {
 			"diagnostics",
-			sources = { "nvim_diagnostic" },
-			sections = { "error", "warn", "info", "hint" },
 			symbols = { error = " ", warn = " ", hint = " ", info = "󰋼 " },
-			colored = true,
-			update_in_insert = false,
-			always_visible = false,
 		}
 
 		local diff = {
 			"diff",
-			colored = true,
 			symbols = { added = " ", modified = " ", removed = " " },
+		}
+
+		local filename = {
+			"filename",
+			path = 1,
+			symbols = {
+				modified = "󰷈",
+				readonly = "󰌾",
+			},
 		}
 
 		local function activeLsp()
@@ -34,6 +37,18 @@ return {
 			return lsp
 		end
 
+		local function progress()
+			local cur = vim.fn.line(".")
+			local total = vim.fn.line("$")
+			if cur == 1 then
+				return string.format("Top of %dL", total)
+			elseif cur == total then
+				return string.format("Bot of %dL", total)
+			else
+				return string.format("%2d%%%% / %dL", math.floor(cur / total * 100), total)
+			end
+		end
+
 		require("lualine").setup({
 			options = {
 				globalstatus = true,
@@ -45,9 +60,9 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", diff, activeLsp },
 				lualine_c = { diagnostics },
-				lualine_x = { "filename", "filesize" },
+				lualine_x = { filename, "filesize" },
 				lualine_y = { "location" },
-				lualine_z = { "progress" },
+				lualine_z = { progress },
 			},
 		})
 	end,

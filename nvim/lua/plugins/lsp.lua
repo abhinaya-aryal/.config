@@ -1,6 +1,6 @@
 return {
 	"williamboman/mason.nvim",
-	event = { "BufAdd", "BufNew" },
+	event = { "VeryLazy" },
 	dependencies = {
 		{ "williamboman/mason-lspconfig.nvim" },
 		{ "neovim/nvim-lspconfig" },
@@ -19,12 +19,6 @@ return {
 			vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
 		end
 
-		-- NOTE: Rounded border for floats
-		-- vim.lsp.handlers["textDocument/hover"] =
-		-- vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", title = "hover" })
-		-- vim.lsp.handlers["textDocument/signatureHelp"] =
-		-- vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", title = "signature" })
-
 		-- NOTE: Diagnostic related global config
 		vim.diagnostic.config({
 			virtual_text = false,
@@ -34,7 +28,7 @@ return {
 		})
 
 		-- NOTE: Setting up shortcuts on attaching the lsp
-		local on_attach = function(_, bufnr)
+		local on_attach = function(client, bufnr)
 			vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp,omnifunc")
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
@@ -88,7 +82,7 @@ return {
 							},
 							diagnostics = {
 								-- Get the language server to recognize the `vim` global
-								globals = { "vim" },
+								globals = { "vim", "mp" },
 							},
 							-- Do not send telemetry data containing a randomized but unique identifier
 							telemetry = {
