@@ -98,7 +98,7 @@ local opts = {
 	-- 'insert'   -- play the video after the current video
 	-- 'play'     -- append the video to the playlist and play it
 	-- 'replace'  -- play the video and clear the playlist
-	uosc_entry_action = "play",
+	uosc_entry_action = "replace",
 
 	-- Should the uosc menu stay open after clicking a video recommendation
 	uosc_keep_menu_open = false,
