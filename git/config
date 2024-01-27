@@ -1,0 +1,18 @@
+[user]
+	name = Abhinaya Aryal
+	email = aryalabhinaya343@gmail.com
+[init]
+	defaultBranch = main
+[merge]
+	tool = nvimdiff
+[diff]
+	tool = nvimdiff
+  conflictstyle = diff3
+[core]
+  editor = nvim
+	autocrlf = input
+[difftool]
+  prompt = false
+[mergetool "nvimdiff"]
+    layout = LOCAL,MERGED,REMOTE
+

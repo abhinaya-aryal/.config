@@ -10,7 +10,7 @@ return {
 		require("telescope").setup({
 			defaults = {
 				layout_strategy = "horizontal",
-				layout_config = { width = 0.95, height = 0.95 },
+				layout_config = { width = 0.85, height = 0.85 },
 				dynamic_preview_title = true,
 				mappings = {
 					["i"] = {

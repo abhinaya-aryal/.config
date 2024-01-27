@@ -1,5 +1,15 @@
 To change the default shell for the user:                      usermod -s <SHELL> <username>                            sudo usermod -s /bin/fish abhinaya
 
+To install:                                                                             dkms, bd, rtl8821ce-dkms-git    
+
+In file /etc/modprobe.d/blacklist.conf:                                           Add 'blacklist rtw88_8821ce' in the file;
+
+To install:                                                            zsh, zsh-completions, zsh-syntax-highlighting, zsh-autosuggestions
+
+To install:                                       zsh-theme-powerlevel10k-git, ttf-meslo-nerd-font-powerlevel10k, powerline-fonts, awesome-terminal-fonts
+
+Add following line in /etc/zsh/zshenv:                      export ZDOTDIR="$HOME"/.config/zsh
+
 To determine mimetype of a fle:                             xdg-mime query filetype <filename>                          xdg-mime query filetype photo.jpeg
 
 To determine default application for mimetype:                 xdg-mime default <mimetype>                              xdg-mime default image/png  

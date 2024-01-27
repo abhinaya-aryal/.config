@@ -3,16 +3,17 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("toggleterm").setup({
+			size = 8,
 			open_mapping = [[<c-\>]],
-			hide_numbers = false,
+			hide_numbers = true,
 			insert_mapping = true,
 			terminal_mappings = true,
-			direction = "float",
+			direction = "horizontal",
 			close_on_exit = true,
 			autochdir = true,
-			shell = vim.o.shell,
+			auto_scroll = true,
 			winbar = {
-				enabled = true,
+				enabled = false,
 			},
 			float_opts = {
 				border = "curved",

@@ -6,15 +6,7 @@ return {
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"lua",
-				"html",
-				"markdown",
-				"markdown_inline",
-				"css",
-				"typescript",
-				"javascript",
-				"tsx",
 				"zig",
-				"regex",
 			},
 			auto_install = true,
 			sync_install = false,

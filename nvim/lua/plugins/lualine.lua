@@ -45,7 +45,7 @@ return {
 			elseif cur == total then
 				return string.format("Bot of %dL", total)
 			else
-				return string.format("%2d%%%% / %dL", math.floor(cur / total * 100), total)
+				return string.format("%2d%%%% of %dL", math.floor(cur / total * 100), total)
 			end
 		end
 
