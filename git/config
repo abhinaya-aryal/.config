@@ -5,14 +5,13 @@
 	defaultBranch = main
 [merge]
 	tool = nvimdiff
+  conflictstyle = diff3
 [diff]
 	tool = nvimdiff
-  conflictstyle = diff3
 [core]
   editor = nvim
 	autocrlf = input
 [difftool]
   prompt = false
-[mergetool "nvimdiff"]
-    layout = LOCAL,MERGED,REMOTE
-
+[status]
+  short = true

@@ -34,10 +34,10 @@ foreground = "0xabb2bf"
 bright_foreground = "0xe6efff"
 
 [font]
-size = 13
+size = 12
 
 [font.offset]
-# y = 3
+y = 2
 
 [font.normal]
 family = "MesloLGS NF"

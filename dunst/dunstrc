@@ -6,10 +6,10 @@
     origin = top-center
     offset = 10x30
     corner_radius = 8
-    icon_theme = "Papirus, Adwaita"
-    show_age_threshold = 45
+    icon_theme = Papirus
+    show_age_threshold = 11
     format = "<span size='large'><b>%s</b></span>\n%b"
-    font = Monospace 8 
+    font = Monospace 10 
     enable_recursive_icon_lookup = true
 
 [urgency_low]
@@ -25,8 +25,8 @@
     timeout = 10
 
 [urgency_critical]
-    background = "#ffeeee"
-    foreground = "#ff0000"
-    frame_color = "#ffeeee"
+    background = "#494f55"
+    foreground = "#eeeeff"
+    frame_color = "#494f55"
     timeout = 60 
 
