@@ -21,9 +21,8 @@
     },
 
 "temperature": {
-      "critical-threshold": 90,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": ["", ""],
+      "critical-threshold": 65,
+      "format": " {temperatureC}°C",
       "tooltip": false,
     },
 
@@ -37,11 +36,11 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
 
 "backlight": {
-          "format": "󰃝 {}%",
+          "format": "󰃠 {}%",
           "on-scroll-up": "sudo light -A 5",
           "on-scroll-down": "sudo light -U 5",
           "tooltip": false,

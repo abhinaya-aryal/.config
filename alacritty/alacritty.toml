@@ -34,15 +34,11 @@ foreground = "0xabb2bf"
 bright_foreground = "0xe6efff"
 
 [font]
-size = 12
-
-[font.offset]
-y = 2
+size = 13
 
 [font.normal]
 family = "MesloLGS NF"
 style = "Regular"
-
 
 [font.bold]
 family = "MesloLGS NF"
@@ -57,4 +53,8 @@ family = "MesloLGS NF"
 style = "Bold Italic"
 
 [window]
-opacity = 0.88
+opacity = 0.85
+
+[window.padding]
+x = 2
+y = 4

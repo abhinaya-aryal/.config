@@ -7,12 +7,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# HISTFILE=~/.local/state/zsh/histfile
+export HISTFILE="$XDG_STATE_HOME"/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
+setopt share_history
 bindkey -v
 
-# zstyle :compinstall filename '~/.config/zsh/.zshrc'
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
@@ -35,4 +35,5 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
-export HISTFILE="$XDG_STATE_HOME"/zsh/histfile
+export EDITOR=nvim
+export VISUAL=nvim

@@ -22,9 +22,6 @@ vim.keymap.set("v", "p", '"_dP', opts)
 -- Copy whole file content to clipboard
 vim.keymap.set("n", "<c-c>", ":%y+<CR>", opts)
 
--- Save Buffer
--- vim.keymap.set("n", "<leader>wb", "<cmd>update<cr>", { silent = true, desc = "Write Buffer" })
-
 -- Enter Normal mode from insert mode terminal mode and visual mode
 vim.keymap.set("i", "ij", "<ESC>", opts)
 vim.keymap.set("v", "ij", "<ESC>", opts)

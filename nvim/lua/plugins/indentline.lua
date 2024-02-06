@@ -1,6 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	event = "BufAdd",
+	event = "VeryLazy",
 	config = function()
 		local highlight = {
 			"RainbowGreen",

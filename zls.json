@@ -3,5 +3,5 @@
   "build_on_save_step": "run",
   "enable_autofix": true,
   "warn_style": true,
-  "highlight_global_var_declarations": true,
+  "highlight_global_var_declarations": true
 }

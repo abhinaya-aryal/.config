@@ -1,34 +1,8 @@
 return {
-	"williamboman/mason.nvim",
-	event = { "VeryLazy" },
-	dependencies = {
-		{ "williamboman/mason-lspconfig.nvim" },
-		{ "neovim/nvim-lspconfig" },
-		{ "hrsh7th/cmp-nvim-lsp" },
-		{ "b0o/schemastore.nvim" },
-	},
+	"neovim/nvim-lspconfig",
+	event = { "FileType" },
 	config = function()
-		-- NOTE: Signs for diagnostics
-		local signs = {
-			{ name = "DiagnosticSignError", text = "" },
-			{ name = "DiagnosticSignWarn", text = "" },
-			{ name = "DiagnosticSignHint", text = "" },
-			{ name = "DiagnosticSignInfo", text = "" },
-		}
-		for _, sign in ipairs(signs) do
-			vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
-		end
-
-		-- NOTE: Diagnostic related global config
-		vim.diagnostic.config({
-			virtual_text = false,
-			float = { border = "rounded" },
-			severity_sort = true,
-			update_in_insert = false,
-		})
-
-		-- NOTE: Setting up shortcuts on attaching the lsp
-		local on_attach = function(client, bufnr)
+		local on_attach = function(_, bufnr) -- ignored parameter is 'client'
 			vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp,omnifunc")
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
@@ -42,88 +16,44 @@ return {
 		end
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities.textDocument.completion.completionItem.snipperSupport = true
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-		-- INFO: Setting up mason
-		require("mason").setup({
-			ui = {
-				border = "rounded",
+		-- Zig language server
+		require("lspconfig").zls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
+		-- Lua language server specifically for nvim setup
+		require("lspconfig").lua_ls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							vim.env.VIMRUNTIME,
+						},
+					},
+					diagnostics = {
+						globals = { "vim", "mp" },
+					},
+					telemetry = {
+						enable = false,
+					},
+				},
 			},
 		})
 
-		require("mason-lspconfig").setup({
-			ensure_installed = {
-				"zls",
-				"lua_ls",
-			},
-			automatic_installation = true,
-		})
-
-		-- INFO: Automatic setting up installed lsps from mason
-		require("mason-lspconfig").setup_handlers({
-			function(server_name)
-				require("lspconfig")[server_name].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
-			end,
-
-			-- NOTE: Setting up special servers individually
-			["lua_ls"] = function()
-				require("lspconfig").lua_ls.setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-					settings = {
-						Lua = {
-							runtime = {
-								-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-								version = "LuaJIT",
-							},
-							diagnostics = {
-								-- Get the language server to recognize the `vim` global
-								globals = { "vim", "mp" },
-							},
-							-- Do not send telemetry data containing a randomized but unique identifier
-							telemetry = {
-								enable = false,
-							},
-						},
-					},
-				})
-			end,
-
-			["jsonls"] = function()
-				require("lspconfig").jsonls.setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-					settings = {
-						json = {
-							schemas = require("schemastore").json.schemas(),
-							validate = { enable = true },
-						},
-					},
-				})
-			end,
-
-			["cssls"] = function()
-				require("lspconfig").cssls.setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-					settings = {
-						css = {
-							lint = {
-								validProperties = { "composes" },
-							},
-						},
-					},
-				})
-			end,
+		-- Language server for markdown files
+		require("lspconfig").marksman.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
 		})
 	end,
-
-	keys = {
-		{ "<leader>m", "<cmd>Mason<cr>", desc = "Mason" },
-		{ "<leader>i", "<cmd>LspInfo<cr>", desc = "LspInfo" },
-	},
 }
