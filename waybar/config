@@ -2,12 +2,12 @@
 	"layer": "top",
   "position": "top",
 	"modules-left": ["custom/launcher","cpu","memory","temperature","battery", "backlight", "pulseaudio"],
-	"modules-center": ["hyprland/window"],
-	"modules-right": ["hyprland/workspaces", "clock", "tray", "bluetooth", "custom/power"],
+	"modules-center": ["river/window"],
+	"modules-right": ["river/tags", "clock", "tray", "bluetooth", "custom/power"],
 
  "custom/launcher":{
         "format": "",
-        "on-click": "sleep 0.15 && fuzzel --show drun",
+        "on-click": "fuzzel --show drun",
         "tooltip": false,
     },
 
@@ -16,7 +16,7 @@
     },
 
 "memory": {
-        "interval": 5,
+        "interval": 3,
         "format": " {used}G",
     },
 
@@ -59,12 +59,16 @@
 		}
 	},
 
-  "hyprland/window": {
-    "max-length": 70,
+  "river/window": {
+    "max-length": 40,
+  },
+
+  "river/tags": {
+     "num-tags": 4,
   },
 
 "clock": {
-        "format": "{: %I:%M %p   %b, %d %a}",
+        "format": "{: %I:%M %p  %b, %d %a}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "month",
@@ -110,6 +114,6 @@
 "custom/power":{
         "format": "⏻ ",
         "tooltip": false,
-        "on-click": "sleep 0.15 && bash ~/.config/hypr/scripts/power_menu",
+        "on-click": "bash ~/.config/hypr/scripts/power_menu",
     },
   }

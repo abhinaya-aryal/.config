@@ -1,6 +1,6 @@
 To change the default shell for the user:                   usermod -s <SHELL> <username>                            sudo usermod -s /usr/bin/fish abhinaya
 
-To install:                                                                             dkms, bd, rtl8821ce-dkms-git    
+To install:                                                                             dkms, bc, rtl8821ce-dkms-git    
 
 Add the line in /etc/modprobe.d/blacklist.conf:                                            blacklist rtw88_8821ce
 

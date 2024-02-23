@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wallpapers="$HOME/.config/hypr/backgrounds"
+wallpapers="$HOME/.config/river/backgrounds"
 
 swaybg -i $(find $wallpapers -type f | shuf -n1) -m fill &
 OLD_PID=$!
