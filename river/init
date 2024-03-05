@@ -63,7 +63,7 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
-riverctl map normal None Print spawn 'IMG=~/images/screenshots/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png&&grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && notify-send "Success!" "Screenshot has been saved and copied to your clipboard." -u normal'
+riverctl map normal None Print spawn 'IMG=~/images/screenshots/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png && grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && notify-send "Success!" "Screenshot has been saved and copied to your clipboard." -u normal'
 
 for mode in normal locked
 do

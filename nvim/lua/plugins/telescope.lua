@@ -48,7 +48,7 @@ return {
         file_browser = {
           cwd_to_path = true,
           hijack_netrw = true,
-          -- no_ignore = true,
+          no_ignore = true,
           mappings = {
             ["n"] = {
               ["c"] = fb_actions.create,

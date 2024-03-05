@@ -3,7 +3,7 @@
 ignore-empty-password
 show-failed-attempts
 daemonize
-image=$(find ${HOME}/.config/hypr/backgrounds -type f | shuf -n 1)
+image=$(find ${HOME}/.config/river/backgrounds -type f | shuf -n 1)
 indicator-caps-lock
 font-size=30
 indicator-radius=150

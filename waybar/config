@@ -114,6 +114,6 @@
 "custom/power":{
         "format": "⏻ ",
         "tooltip": false,
-        "on-click": "bash ~/.config/hypr/scripts/power_menu",
+        "on-click": "bash ~/.config/river/scripts/power_menu",
     },
   }
