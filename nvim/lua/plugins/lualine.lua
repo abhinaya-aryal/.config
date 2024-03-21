@@ -52,7 +52,7 @@ return {
     require("lualine").setup({
       options = {
         globalstatus = true,
-        disabled_filetypes = { "alpha", "NvimTree", "lazy", "mason", "TelescopePrompt" },
+        disabled_filetypes = { "alpha", "NvimTree", "lazy", "mason", "TelescopePrompt", "toggleterm" },
         icons_enabled = true,
         colored = true,
       },
