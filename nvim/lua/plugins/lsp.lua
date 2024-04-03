@@ -50,7 +50,7 @@ return {
       },
     })
 
-    -- Language server for markdown files
+    --  for markdown files
     require("lspconfig").marksman.setup({
       on_attach = on_attach,
       capabilities = capabilities,
@@ -61,5 +61,11 @@ return {
       on_attach = on_attach,
       capabilities = capabilities,
     })
+
+    -- csharp
+    require("lspconfig").csharp_ls.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
   end,
 }

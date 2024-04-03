@@ -68,8 +68,9 @@
   },
 
 "clock": {
-        "format": "{: %I:%M %p  %b, %d %a}",
+        "format": " {:%I:%M %p  %b, %d %a}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "timezone": "Asia/Kathmandu",
         "calendar": {
                     "mode"          : "month",
                     "mode-mon-col"  : 3,
@@ -107,7 +108,7 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "max-length": 15,
-    "on-click": "bash ~/.config/hypr/scripts/toggle_bluetooth"
+    "on-click": "bash ~/.config/river/scripts/toggle_bluetooth"
   },
 
      
