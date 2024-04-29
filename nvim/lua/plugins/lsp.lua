@@ -25,7 +25,7 @@ return {
       capabilities = capabilities,
     })
 
-    -- Lua language server specifically for nvim setup
+    -- Lua language server specifically for nvim config
     require("lspconfig").lua_ls.setup({
       on_attach = on_attach,
       capabilities = capabilities,

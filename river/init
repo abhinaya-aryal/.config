@@ -81,6 +81,7 @@ done
 riverctl map normal Control+Alt B spawn brave
 riverctl map normal Control+Alt T spawn alacritty
 riverctl map normal Control+Alt P spawn pamac-manager
+riverctl map normal Control+Alt F spawn thunar
 
 touchpad="$(riverctl list-inputs | grep -i touchpad)"
 riverctl input $touchpad events enabled
