@@ -33,7 +33,7 @@ local options = {
   overlay_id = 42,
 
   -- Spawn thumbnailer on file load for faster initial thumbnails
-  spawn_first = false,
+  spawn_first = true,
 
   -- Close thumbnailer process after an inactivity period in seconds, 0 to disable
   quit_after_inactivity = 0,

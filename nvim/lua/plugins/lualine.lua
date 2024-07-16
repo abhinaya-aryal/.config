@@ -14,20 +14,26 @@ return {
 
     local filename = {
       "filename",
-      path = 4,
+      path = 0,
       symbols = {
         modified = "󰷈",
         readonly = "󰌾",
       },
     }
 
+    local buffers = {
+      "buffers",
+      mode = 1,
+    }
+
     local function activeLsp()
       local lsp = "No Lsp"
       local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-      local clients = vim.lsp.buf_get_clients()
+      local clients = vim.lsp.get_clients()
       if next(clients) == nil then
         return lsp
       end
+
       for _, client in pairs(clients) do
         local filetypes = client.config.filetypes
         if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
@@ -60,7 +66,7 @@ return {
         lualine_a = { "mode" },
         lualine_b = { "branch", diff, activeLsp },
         lualine_c = { diagnostics },
-        lualine_x = { filename, "filesize" },
+        lualine_x = { buffers, filename, "filesize" },
         lualine_y = { "location" },
         lualine_z = { progress },
       },
