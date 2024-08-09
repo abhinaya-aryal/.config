@@ -36,4 +36,3 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 export EDITOR=nvim
-export VISUAL=nvim
