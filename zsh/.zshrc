@@ -36,3 +36,8 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 export EDITOR=nvim
+
+
+#initialize Z (https://github.com/rupa/z)
+. ~/.config/zsh/z.sh
+
