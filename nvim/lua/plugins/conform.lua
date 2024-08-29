@@ -15,7 +15,7 @@ return {
         ["_"] = { "trim_whitespace" },
       },
       format_on_save = {
-        timeout_ms = 1000,
+        timeout_ms = 10000,
       },
       default_format_opts = {
         lsp_format = "fallback",

@@ -13,3 +13,5 @@
 	autocrlf = input
 [difftool]
   prompt = false
+[push]
+	autoSetupRemote = true
