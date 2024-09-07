@@ -23,7 +23,8 @@ vim.opt.scrolloff = 999                                 -- Lines of context
 vim.opt.shiftwidth = 2                                  -- size of an indent
 vim.opt.shiftround = true                               -- better indentation support
 vim.opt.showmode = false                                -- Don't show mode since we have a statusline
-vim.opt.signcolumn = "yes"                              -- always show the signcolumn, otherwise it would shift the text each time
+vim.opt.signcolumn =
+"yes"                                                   -- always show the signcolumn, otherwise it would shift the text each time
 vim.opt.smartindent = true                              -- insert indents automatically
 vim.opt.smartcase = true                                -- override ignorecase if search pattern contain uppercase characters
 vim.opt.spelllang = { "en" }
@@ -35,22 +36,3 @@ vim.opt.termguicolors = true                            -- true color support
 vim.opt.undofile = true
 vim.opt.updatetime = 100                                -- used for the cursorhold autocommand event
 vim.opt.wildmode = "longest:full"
-
--- Defining icons/signs for diagnostics
-local signs = {
-  { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "" },
-  { name = "DiagnosticSignInfo", text = "" },
-}
-for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
-end
-
--- Global config for diagnostics message
-vim.diagnostic.config({
-  virtual_text = true,
-  float = { border = "rounded" },
-  severity_sort = true,
-  update_in_insert = false,
-})

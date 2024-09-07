@@ -2,22 +2,56 @@ return {
   "neovim/nvim-lspconfig",
   event = { "FileType" },
   config = function()
-    local on_attach = function(_, bufnr) -- ignored parameter is 'client'
+    local on_attach = function(client, bufnr)
+      --enable completion triggerred by <c-x><c-o>
       vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp,omnifunc")
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr })
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
-      vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = bufnr })
-      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr })
-      vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, {})
-      vim.keymap.set("n", "<leader>nd", vim.diagnostic.goto_next, {})
-      vim.keymap.set("n", "<leader>pd", vim.diagnostic.goto_prev, {})
-      vim.keymap.set("n", "<leader>rl", vim.lsp.buf.rename, { buffer = bufnr })
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+      --Mappings
+      local opts = { buffer = bufnr }
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+      vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, opts)
+      vim.keymap.set("n", "<leader>nd", vim.diagnostic.goto_next, opts)
+      vim.keymap.set("n", "<leader>pd", vim.diagnostic.goto_prev, opts)
+      vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+      vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, opts)
+
+
+      if (client.name == "eslint") then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = "EslintFixAll"
+        })
+      end
     end
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+    -- defining signs for diagnostics
+    local signs = {
+      { name = "DiagnosticSignError", text = "" },
+      { name = "DiagnosticSignWarn", text = "" },
+      { name = "DiagnosticSignHint", text = "" },
+      { name = "DiagnosticSignInfo", text = "" },
+    }
+    for _, sign in ipairs(signs) do
+      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+    end
+
+    -- diagnostic display options
+    vim.diagnostic.config({
+      virtual_text = false,
+      signs = true,
+      underline = true,
+      float = { border = "rounded" },
+      severity_sort = true,
+      update_in_insert = false,
+    })
 
     -- Zig language server
     require("lspconfig").zls.setup({
@@ -63,11 +97,21 @@ return {
     })
 
     -- Typescript language server
-    require("lspconfig").tsserver.setup {
+    require("lspconfig").ts_ls.setup({
       on_attach = on_attach,
       capabilities = capabilities,
-      filetypes = { "typescript", "js", "javascript", "typescriptreact", "typescript.tsx" },
-      cmd = { "typescript-language-server", "--stdio" }
-    }
+    })
+
+    -- Tailwindcss language server
+    require("lspconfig").tailwindcss.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
+    -- Eslint
+    require("lspconfig").eslint.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
   end,
 }

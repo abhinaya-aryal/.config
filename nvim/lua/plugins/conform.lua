@@ -5,12 +5,14 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        javascript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescript = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        html = { "prettierd" },
-        markdown = { "prettierd" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+        html = { "prettier" },
+        markdown = { "prettier" },
+        css = { "prettier" },
+        json = { "prettier" },
         ["*"] = { "codespell" },
         ["_"] = { "trim_whitespace" },
       },

@@ -20,9 +20,6 @@ return {
       autopairs = {
         enable = true,
       },
-      autotag = {
-        enable = true,
-      },
       indent = { enable = true },
     })
   end,
