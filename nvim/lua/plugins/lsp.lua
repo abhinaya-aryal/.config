@@ -45,7 +45,7 @@ return {
 
     -- diagnostic display options
     vim.diagnostic.config({
-      virtual_text = false,
+      virtual_text = true,
       signs = true,
       underline = true,
       float = { border = "rounded" },
@@ -82,12 +82,6 @@ return {
           },
         },
       },
-    })
-
-    --  for markdown files
-    require("lspconfig").marksman.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
     })
 
     -- C/C++ language server

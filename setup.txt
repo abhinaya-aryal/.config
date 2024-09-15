@@ -1,6 +1,8 @@
 To change the default shell for the user:                   usermod -s <SHELL> <username>                            sudo usermod -s /usr/bin/fish abhinaya
+chsh -s /bin/zsh
+sudo chsh -s /bin/zsh root
 
-To install:                                                                             dkms, bc, rtl8821ce-dkms-git    
+To install:                                                                             dkms, bc, rtl8821ce-dkms-git
 
 Add the line in /etc/modprobe.d/blacklist.conf:                                            blacklist rtw88_8821ce
 
@@ -12,8 +14,10 @@ Add the line in /etc/zsh/zshenv:                                                
 
 To determine mimetype of a file:                             xdg-mime query filetype <filename>                         xdg-mime query filetype photo.jpeg
 
-To determine default application for mimetype:                 xdg-mime default <mimetype>                              xdg-mime default image/png  
+To determine default application for mimetype:                 xdg-mime default <mimetype>                              xdg-mime default image/png
 
 To change the default application for a mimetype:       xdg-mime default <*.desktop> <mimetype>                         xdg-mime default ranger.desktop inode/directory
 
-Add the line in /etc/environment             GTK_THEME=Adwaita:dark , GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc , QT_STYLE_OVERRIDE=adwaita-dark
+Add the following line in /etc/environment             GTK_THEME=Adwaita:dark , GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc , QT_STYLE_OVERRIDE=adwaita-dark
+
+Tools to clean up home directory                                     antidot

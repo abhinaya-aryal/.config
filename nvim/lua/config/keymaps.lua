@@ -7,14 +7,14 @@ vim.keymap.set("n", "<c-k>", "<c-w>k", opts)
 vim.keymap.set("n", "<c-l>", "<c-w>l", opts)
 
 -- Resize with arrows
-vim.keymap.set("n", "<c-up>", ":resize -2<cr>", opts)
-vim.keymap.set("n", "<c-Down>", ":resize +2<CR>", opts)
-vim.keymap.set("n", "<c-Left>", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<c-Right>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<c-up>", ":resize -1<cr>", opts)
+vim.keymap.set("n", "<c-Down>", ":resize +1<CR>", opts)
+vim.keymap.set("n", "<c-Left>", ":vertical resize -1<CR>", opts)
+vim.keymap.set("n", "<c-Right>", ":vertical resize +1<CR>", opts)
 
 -- Navigate buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
 
 -- Better paste in visual mode
 vim.keymap.set("v", "p", '"_dP', opts)

@@ -13,11 +13,11 @@ return {
         markdown = { "prettier" },
         css = { "prettier" },
         json = { "prettier" },
-        ["*"] = { "codespell" },
+        ["*"] = { "typos" },
         ["_"] = { "trim_whitespace" },
       },
       format_on_save = {
-        timeout_ms = 10000,
+        timeout_ms = 500,
       },
       default_format_opts = {
         lsp_format = "fallback",
