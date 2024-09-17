@@ -41,7 +41,7 @@ riverctl map normal Super D spawn fuzzel
 riverctl map normal Control+Alt B spawn brave
 riverctl map normal Control+Alt T spawn alacritty
 riverctl map normal Control+Alt M spawn "mpv --player-operation-mode=pseudo-gui"
-riverctl map normal None Print spawn 'IMG=~/images/screenshots/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png && grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && notify-send "Success!" "Screenshot has been saved and copied to your clipboard." -u normal'
+riverctl map normal None Print spawn 'IMG=~/images/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png && grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && notify-send "Success!" "Screenshot has been saved and copied to your clipboard." -u normal'
 
 for mode in normal locked
 do
