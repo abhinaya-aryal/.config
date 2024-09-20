@@ -7,8 +7,8 @@ if [[ $choice == "  Lock" ]];then
 elif [[ $choice == "  Kill User Session" ]];then
   pkill -KILL -u "$USER"
 elif [[ $choice == "󰍛  Suspend" ]];then
+  swaylock
   systemctl suspend
-  swaylock 
 elif [[ $choice == "󰑙  Reboot" ]];then
   systemctl reboot
 elif [[ $choice == "  Power Off" ]];then
