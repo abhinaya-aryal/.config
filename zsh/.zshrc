@@ -45,7 +45,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # Wget alias to save HSTS data in the XDG data directory
-alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 # Set default editor
 export EDITOR=/usr/bin/nvim
@@ -65,3 +65,6 @@ export _Z_DATA="$XDG_CACHE_HOME/z"
 
 # go rule antidot
 export GOPATH="$XDG_DATA_HOME/go"
+
+# cargo_home rule antidot
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
