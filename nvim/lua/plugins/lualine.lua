@@ -8,14 +8,16 @@ return {
     }
 
     local function activeLsp()
-      local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+      -- local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+      local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
       local clients = vim.lsp.get_clients({ bufnr = 0 })
+      local lsp_names = {}
       for _, client in ipairs(clients) do
         if client.config and client.config.filetypes and vim.tbl_contains(client.config.filetypes, buf_ft) then
-          return client.name
+          table.insert(lsp_names, client.name)
         end
       end
-      return ""
+      return #lsp_names > 0 and table.concat(lsp_names, " / ") or ""
     end
 
     local diagnostics = {
