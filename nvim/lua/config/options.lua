@@ -1,5 +1,6 @@
 vim.g.mapleader = " "                                               -- space key as leader key
 vim.g.maplocalleader = " "                                          -- space key as local leader too
+vim.g.zig_fmt_parse_errors = false
 vim.opt.autowrite = true                                            -- Enable auto write
 vim.opt.backup = false                                              -- don't create a backup file
 vim.opt.autochdir = true                                            -- change the current working directory while opening a file
