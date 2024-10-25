@@ -1,7 +1,7 @@
 {
-  "enable_build_on_save": false,
-  "build_on_save_step": "run",
-  "enable_autofix": true,
+  "enable_build_on_save": true,
+  "enable_autofix": false,
+  "inlay_hints_exclude_single_argument": true,
   "warn_style": true,
   "highlight_global_var_declarations": true
 }

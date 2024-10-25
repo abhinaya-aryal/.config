@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     local buffer_timers = {}
+    local deleteAfterMins = 5
 
     local function delete_inactive_buffer(bufnr)
       if vim.api.nvim_buf_is_valid(bufnr) then
@@ -21,7 +22,7 @@ return {
           if not buffer_timers[bufnr] then
             local timer = vim.uv.new_timer()
             buffer_timers[bufnr] = timer
-            timer:start(180000, 0, vim.schedule_wrap(function()
+            timer:start(deleteAfterMins * 60000, 0, vim.schedule_wrap(function()
               delete_inactive_buffer(bufnr)
               timer:stop()
               timer:close()
