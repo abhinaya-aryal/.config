@@ -13,7 +13,8 @@ return {
         markdown = { "prettier" },
         css = { "prettier" },
         json = { "prettier" },
-        ["*"] = { "typos" },
+        graphql = { "prettier" },
+        -- ["*"] = { "typos" },
         ["_"] = { "trim_whitespace" },
       },
       format_on_save = {

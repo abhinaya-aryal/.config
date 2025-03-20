@@ -18,6 +18,6 @@ To determine default application for mimetype:                 xdg-mime default 
 
 To change the default application for a mimetype:       xdg-mime default <*.desktop> <mimetype>                         xdg-mime default ranger.desktop inode/directory
 
-Add the following line in /etc/environment             GTK_THEME=Adwaita:dark , GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc , QT_STYLE_OVERRIDE=adwaita-dark
+Add the following line in /etc/environment             GTK_THEME=Adwaita:dark
 
 Tools to clean up home directory                                     antidot

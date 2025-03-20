@@ -3,11 +3,17 @@ return {
   event = "VeryLazy",
   config = function()
     local buffer_timers = {}
-    local deleteAfterMins = 5
+    local deleteAfterMins = 10
 
     local function delete_inactive_buffer(bufnr)
       if vim.api.nvim_buf_is_valid(bufnr) then
         local buf_name = vim.api.nvim_buf_get_name(bufnr)
+        local windows = vim.fn.win_findbuf(bufnr)
+
+        if #windows > 0 then
+          return
+        end
+
         if vim.fn.buflisted(bufnr) == 1 and vim.api.nvim_buf_is_loaded(bufnr) and not vim.api.nvim_get_option_value("modified", { buf = bufnr }) then
           require("bufdelete").bufwipeout(bufnr, true);
           vim.notify("Buffer " .. buf_name .. " deleted.", vim.log.levels.INFO)
