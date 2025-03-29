@@ -14,7 +14,7 @@ return {
         css = { "prettier" },
         json = { "prettier" },
         graphql = { "prettier" },
-        -- ["*"] = { "typos" },
+        ["*"] = { "typos" },
         ["_"] = { "trim_whitespace" },
       },
       format_on_save = {

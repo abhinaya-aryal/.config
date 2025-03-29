@@ -12,13 +12,13 @@ return {
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
       vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
       vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
       vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, opts)
-      vim.keymap.set("n", "<leader>nd", vim.diagnostic.goto_next, opts)
-      vim.keymap.set("n", "<leader>pd", vim.diagnostic.goto_prev, opts)
+      vim.keymap.set("n", "<leader>nd", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
+      vim.keymap.set("n", "<leader>pd", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
       vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
       vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, opts)
-
 
       if (client.name == "eslint") then
         vim.api.nvim_create_autocmd("BufWritePre", {

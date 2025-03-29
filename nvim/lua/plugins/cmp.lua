@@ -29,9 +29,9 @@ return {
 
     local snippet = require("luasnip")
     local source_mapping = {
-      buffer = "[Buffer]",
       nvim_lsp = "[LSP]",
       nvim_lsp_signature_help = "[Sig]",
+      buffer = "[Buffer]",
       path = "[Path]",
       luasnip = "[LuaSnip]",
     }
@@ -48,8 +48,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ["<c-j>"] = cmp.mapping.select_next_item(),
-        ["<c-k>"] = cmp.mapping.select_prev_item(),
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),

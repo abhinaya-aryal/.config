@@ -1,7 +1,7 @@
 * {
   border: none;
-  font-family: "Fira Code";
-  font-size: 16px;
+  /* font-family: "Fira Code"; */
+  font-size: 17px;
 }
 
 window#waybar {
@@ -117,7 +117,7 @@ window#waybar {
   padding-left: 14px;
   padding-right: 14px;
   background: #372736;
-  border-radius: 8px;
+  border-radius: 50%;
   color: white;
 }
 
@@ -140,10 +140,10 @@ window#waybar {
 }
 
 #custom-power {
-  font-size: 18px;
+  font-size: 28px;
   margin-left: 8px;
   padding-left: 10px;
-  padding-right: 6px;
+  padding-right: 10px;
   border-radius: 50%;
   color: white;
   background: red;

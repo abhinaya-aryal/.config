@@ -36,21 +36,21 @@ bright_foreground = "0xe6efff"
 [font]
 size = 13
 
-[font.normal]
-family = "MesloLGS NF"
-style = "Regular"
+# [font.normal]
+# family = "MesloLGS NF"
+# style = "Regular"
 
-[font.bold]
-family = "MesloLGS NF"
-style = "Bold"
+# [font.bold]
+# family = "MesloLGS NF"
+# style = "Bold"
 
-[font.italic]
-family = "MesloLGS NF"
-style = "Italic"
+# [font.italic]
+# family = "MesloLGS NF"
+# style = "Italic"
 
-[font.bold_italic]
-family = "MesloLGS NF"
-style = "Bold Italic"
+# [font.bold_italic]
+# family = "MesloLGS NF"
+# style = "Bold Italic"
 
 [window]
 opacity = 0.85

@@ -3,18 +3,15 @@ return {
   event = "VeryLazy",
   config = function()
     require("toggleterm").setup({
-      size = 2,
+      size = 5,
       open_mapping = [[<c-\>]],
       hide_numbers = true,
       insert_mapping = true,
       terminal_mappings = true,
-      direction = "float",
+      direction = "horizontal",
       close_on_exit = true,
       autochdir = true,
       auto_scroll = true,
-      float_opts = {
-        border = "curved",
-      },
     })
 
     function _G.set_terminal_keymaps()
@@ -27,28 +24,25 @@ return {
 
     vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
-    -- open lazygit on <leader>z
+    -- open floating terminal on <leader>z
     local Terminal = require('toggleterm.terminal').Terminal
-    local Lazygit = Terminal:new({
+    local Floating = Terminal:new({
       hidden = true,
-      cmd = "lazygit",
-      display_name = "Lazygit",
+      display_name = "Terminal",
       direction = "float",
-      dir = "git_dir",
-      close_on_exit = true,
+      autochdir = true,
+      auto_scroll = true,
       float_opts = {
         border = "double",
       },
-      on_open = function(term)
-        vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-      end
     })
 
-    function Lazygit_toggle()
-      Lazygit:toggle()
+    function Floating_open()
+      if not Floating:is_open() then
+        Floating:open()
+      end
     end
 
-    vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>lua Floating_open()<CR>", { noremap = true, silent = true })
   end,
 }

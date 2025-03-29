@@ -64,7 +64,7 @@
   },
 
   "river/tags": {
-     "num-tags": 4,
+     "num-tags": 6,
   },
 
 "clock": {
@@ -113,7 +113,7 @@
 
 
 "custom/power":{
-        "format": "⏻ ",
+        "format": "⏻",
         "tooltip": false,
         "on-click": "bash ~/.config/river/scripts/power_menu",
     },

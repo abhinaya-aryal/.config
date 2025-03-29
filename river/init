@@ -78,7 +78,7 @@ riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count +1"
 riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.1"
 riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.1"
 
-for i in $(seq 1 4)
+for i in $(seq 1 6)
 do
   tags=$((1 << ($i - 1)))
   riverctl map normal Super $i set-focused-tags $tags # focus the tag
