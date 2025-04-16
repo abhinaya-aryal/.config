@@ -12,6 +12,9 @@ return {
       close_on_exit = true,
       autochdir = true,
       auto_scroll = true,
+      winbar = {
+        enabled = true,
+      }
     })
 
     function _G.set_terminal_keymaps()

@@ -48,7 +48,7 @@ return {
     require("lualine").setup({
       options = {
         globalstatus = true,
-        disabled_filetypes = { "alpha", "lazy", "TelescopePrompt", "toggleterm" },
+        disabled_filetypes = { "alpha", "lazy", "TelescopePrompt"}, -- "toggleterm"
         icons_enabled = true,
         colored = true,
       },
