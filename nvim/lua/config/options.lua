@@ -1,6 +1,6 @@
 vim.g.mapleader = " "                                               -- space key as leader key
 vim.g.maplocalleader = " "                                          -- space key as local leader too
-vim.g.zig_fmt_parse_errors = false
+-- vim.g.zig_fmt_parse_errors = false
 vim.opt.autowrite = true                                            -- Enable auto write
 vim.opt.backup = false                                              -- don't create a backup file
 vim.opt.autochdir = true                                            -- change the current working directory while opening a file
@@ -24,8 +24,7 @@ vim.opt.scrolloff = 999                                             -- Lines of 
 vim.opt.shiftwidth = 2                                              -- size of an indent
 vim.opt.shiftround = true                                           -- better indentation support
 vim.opt.showmode = false                                            -- Don't show mode since we have a statusline
-vim.opt.signcolumn =
-"yes"                                                               -- always show the signcolumn, otherwise it would shift the text each time
+vim.opt.signcolumn = "yes"                                          -- always show the signcolumn, otherwise it would shift the text each time
 vim.opt.smartindent = true                                          -- insert indents automatically
 vim.opt.smartcase = true                                            -- override ignorecase if search pattern contain uppercase characters
 vim.opt.spelllang = { "en" }

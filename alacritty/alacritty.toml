@@ -53,7 +53,7 @@ size = 13
  style = "Bold Italic"
 
 [window]
-opacity = 0.85
+opacity = 0.7
 
 [window.padding]
 x = 2

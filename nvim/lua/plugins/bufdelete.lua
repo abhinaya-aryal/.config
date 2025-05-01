@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     local buffer_timers = {}
-    local deleteAfterMins = 5
+    local deleteAfterMins = 10
 
     local function delete_inactive_buffer(bufnr)
       if vim.api.nvim_buf_is_valid(bufnr) then
