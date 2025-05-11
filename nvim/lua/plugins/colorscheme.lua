@@ -1,15 +1,14 @@
 return {
-  "navarasu/onedark.nvim",
+"scottmckendry/cyberdream.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("onedark").setup({
-      style = "deep", -- dark | darker | deep | cool | warm | warmer
+    require("cyberdream").setup({
       transparent = true,
-      lualine = {
-        transparent = true,
-      },
+      italic_comments = true,
+      borderless_pickers = false,
     })
-    vim.cmd.colorscheme("onedark")
+    vim.cmd.colorscheme("cyberdream")
   end,
 }
+

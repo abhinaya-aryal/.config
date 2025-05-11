@@ -7,17 +7,6 @@ return {
       symbols = { added = " ", modified = " ", removed = " " },
     }
 
-    local function activeLsp()
-      local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
-      local clients = vim.lsp.get_clients({ bufnr = 0 })
-      local lsp_names = {}
-      for _, client in ipairs(clients) do
-        if client.config and client.config.filetypes and vim.tbl_contains(client.config.filetypes, buf_ft) then
-          table.insert(lsp_names, client.name)
-        end
-      end
-      return #lsp_names > 0 and table.concat(lsp_names, " / ") or ""
-    end
 
     local diagnostics = {
       "diagnostics",
@@ -26,7 +15,7 @@ return {
 
     local filename = {
       "filename",
-      path = 0,
+      path = 4,
       symbols = {
         modified = "󰷈",
         readonly = "󰌾",
@@ -59,7 +48,7 @@ return {
           color = { fg = "#ffffff", gui = "bold" }
         } },
         lualine_b = { "branch", diff },
-        lualine_c = { activeLsp, diagnostics },
+        lualine_c = { "lsp_status", diagnostics },
         lualine_x = { filename, "filesize" },
         lualine_y = { "location" },
         lualine_z = { progress },

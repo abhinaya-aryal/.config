@@ -13,7 +13,7 @@ fi
 export HISTFILE="$XDG_STATE_HOME/zsh/histfile"
 HISTSIZE=1000
 SAVEHIST=1000
-setopt share_history  # Share history across terminals
+setopt share_history
 
 # Vi-mode for Zsh
 bindkey -v
@@ -36,10 +36,11 @@ zle -N down-line-or-beginning-search
 # Syntax highlighting and autosuggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=246" # required only while using cyberdream theme in alacritty
 
-# Powerlevel10k theme
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-[[ -f "$XDG_CONFIG_HOME/zsh/p10k.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/p10k.zsh"
+[[ -f "$XDG_CONFIG_HOME/zsh/.p10k.zsh" ]] && source "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
 
 # GnuPG home
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
