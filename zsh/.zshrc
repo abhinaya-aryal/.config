@@ -14,6 +14,13 @@ export HISTFILE="$XDG_STATE_HOME/zsh/histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt share_history
+setopt inc_append_history
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt extended_history
+
+# load colors
+autoload -U colors && colors
 
 # Vi-mode for Zsh
 bindkey -v
@@ -36,7 +43,7 @@ zle -N down-line-or-beginning-search
 # Syntax highlighting and autosuggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=246" # required only while using cyberdream theme in alacritty
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=246" # required only: while using cyberdream theme in alacritty
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -46,7 +53,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # Wget alias to save HSTS data in the XDG data directory
-alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias wget="wget --hsts-file='$XDG_CACHE_HOME/wget-hsts'"
 
 # Set default editor
 export EDITOR=/usr/bin/nvim
@@ -69,3 +76,6 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 # cargo_home rule antidot
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+# node_repl_history rule antidot
+export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"

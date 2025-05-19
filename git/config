@@ -1,6 +1,7 @@
 [user]
 	name = Abhinaya Aryal
 	email = aryalabhinaya343@gmail.com
+	signingkey = AC71CEA22E3CAEFA
 [init]
 	defaultBranch = main
 [merge]
@@ -15,3 +16,5 @@
   prompt = false
 [push]
 	autoSetupRemote = true
+[commit]
+	gpgsign = true
