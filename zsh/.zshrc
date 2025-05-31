@@ -51,6 +51,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # GnuPG home
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+# export GPG_TTY=$(tty)
 
 # Wget alias to save HSTS data in the XDG data directory
 alias wget="wget --hsts-file='$XDG_CACHE_HOME/wget-hsts'"
