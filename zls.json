@@ -1,7 +1,6 @@
 {
-  "enable_build_on_save": true,
-  "enable_autofix": false,
-  "inlay_hints_exclude_single_argument": true,
+  "$schema": "https://raw.githubusercontent.com/zigtools/zls/refs/tags/0.13.0/schema.json",
   "warn_style": true,
-  "highlight_global_var_declarations": true
+  "highlight_global_var_declarations": true,
+  "inlay_hints_show_variable_type_hints": false
 }
