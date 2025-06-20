@@ -1,6 +1,7 @@
 vim.g.mapleader = " " -- space key as leader key
 vim.g.maplocalleader = " " -- space key as local leader too
 vim.g.zig_fmt_parse_errors = 0
+
 vim.opt.autowrite = true -- Enable auto write
 vim.opt.backup = false -- don't create a backup file
 vim.opt.autochdir = true -- change the current working directory while opening a file
@@ -10,7 +11,10 @@ vim.opt.conceallevel = 1 -- Hide * markup for bold and italic
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.fileencoding = "utf-8"
-vim.opt.fillchars = { eob = " " } --show empty lines at the end of a buffer as space default ~
+vim.opt.fillchars = { eob = " " } -- show empty lines at the end of a buffer as space default ~
+-- vim.opt.foldmethod = "expr"             -- folding method
+-- vim.opt.foldenable = false              -- enable folding at startup
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"        -- use treesitter syntax folding. Only use with ""
 vim.opt.formatoptions = "jcroqlnt" -- serially perform different task during formatting
 vim.opt.grepformat = "%f:%l:%c:%m" -- format to recognize for the ":grep" command output
 vim.opt.grepprg = "rg --vimgrep" -- program to use for the ":grep" command.

@@ -7,7 +7,7 @@ return {
 		formatters_by_ft = {
 			-- ["*"] = { "typos" },
 			["_"] = { "trim_whitespace" },
-			lua = { "stylua", lsp_format = "fallback" },
+			lua = { "stylua" },
 			zig = { "zigfmt" },
 			javascript = { "prettier" },
 			javascriptreact = { "prettier" },

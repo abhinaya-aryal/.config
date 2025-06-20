@@ -51,7 +51,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # GnuPG home
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-# export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
 
 # Wget alias to save HSTS data in the XDG data directory
 alias wget="wget --hsts-file='$XDG_CACHE_HOME/wget-hsts'"
@@ -68,6 +68,7 @@ export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 
 # npm rule by antidot
 export npm_config_cache="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_USERCONFIG="$XDG_DATA_HOME/npm/npmrc"
 
 # z rule by antidot
 export _Z_DATA="$XDG_CACHE_HOME/z"
