@@ -2,7 +2,7 @@
 import = ["~/.config/alacritty/cyberdream.toml"]
 
 [font]
- size = 12
+ size = 11
 
 [font.normal]
  family = "Fira Code"

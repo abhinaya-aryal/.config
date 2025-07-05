@@ -68,7 +68,8 @@ window#waybar {
 }
 
 #window {
-  font-weight: bold;
+  font-weight: bolder;
+  color: white;
 }
 
 #tags {
