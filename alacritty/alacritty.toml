@@ -5,19 +5,19 @@ import = ["~/.config/alacritty/cyberdream.toml"]
  size = 11
 
 [font.normal]
- family = "Fira Code"
+ family = "FiraMono Nerd Font"
  style = "Regular"
 
 [font.bold]
- family = "Fira Code"
+ family = "FiraMono Nerd Font"
  style = "Bold"
 
 [font.italic]
- family = "Fira Code"
+ family = "FiraMono Nerd Font"
  style = "Italic"
 
 [font.bold_italic]
- family = "Fira Code"
+ family = "FiraMono Nerd Font"
  style = "Bold Italic"
 
 [window]

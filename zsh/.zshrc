@@ -36,11 +36,6 @@ setopt hist_expire_dups_first
 # load colors
 autoload -U colors && colors
 
-# Vi-mode for Zsh
-bindkey -v
-bindkey -M vicmd '^[' vi-cmd-mode
-bindkey -M viins 'jj' vi-cmd-mode
-
 # Ctrl+arrow for word navigation
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
