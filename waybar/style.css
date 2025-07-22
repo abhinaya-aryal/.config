@@ -1,6 +1,6 @@
 * {
   border: none;
-  font-family: "Fira Code";
+  font-family: "FiraMono Nerd Font";
   font-size: 17px;
 }
 
@@ -18,12 +18,7 @@ window#waybar {
   border-bottom: 2px solid black;
 }
 
-#cpu {
-  margin-left: 8px;
-  margin-right: 8px;
-  color: white;
-}
-
+#cpu,
 #memory,
 #battery,
 #backlight,
@@ -36,6 +31,13 @@ window#waybar {
 #pulseaudio {
   color: #b0fc38;
   margin-left: 8px;
+  margin-right: 8px;
+}
+
+#network {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #42f542;
 }
 
 #temperature.critical {
@@ -104,14 +106,6 @@ window#waybar {
   color: #abe9b3;
 }
 
-#tray {
-  margin-left: 8px;
-  margin-right: 8px;
-  padding: 10px;
-  border-radius: 50%;
-  background: #372736;
-}
-
 #bluetooth {
   margin-left: 8px;
   margin-right: 8px;
@@ -138,6 +132,7 @@ window#waybar {
 
 #bluetooth.connected {
   color: #59acff;
+  border-radius: 15px;
 }
 
 #custom-power {

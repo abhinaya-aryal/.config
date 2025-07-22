@@ -1,0 +1,131 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "custom/launcher",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "network",
+  ],
+  "modules-center": ["river/window"],
+  "modules-right": ["river/tags", "clock", "bluetooth", "custom/power"],
+
+  "custom/launcher": {
+    "format": "",
+    "on-click": "fuzzel --show drun",
+    "tooltip": false,
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+  },
+
+  "memory": {
+    "interval": 3,
+    "format": " {used}G",
+  },
+
+  "temperature": {
+    "critical-threshold": 65,
+    "format": " {temperatureC}°C",
+    "tooltip": false,
+  },
+
+  "battery": {
+    "states": {
+      "good": 85,
+      "medium": 65,
+      "low": 30,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "Power Draw: {power}W\nRemaining time: {time}\nHealth: {health}",
+  },
+
+  "backlight": {
+    "format": "󰃠 {}%",
+    "on-scroll-up": "brightnessctl s 1%-",
+    "on-scroll-down": "brightnessctl s +1%",
+    "tooltip": false,
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "󰂰 {volume}%",
+    "format-muted": "󰝟 0%",
+    "states": {
+      "muted": 0,
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-icons": {
+      "default": ["", "󰕾", ""],
+    },
+  },
+
+  "river/window": {
+    "max-length": 30,
+  },
+
+  "river/tags": {
+    "num-tags": 6,
+  },
+
+  "clock": {
+    "format": " {:%I:%M %p %b, %d %a}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "timezone": "Asia/Kathmandu",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click": "mode",
+    },
+  },
+
+  "network": {
+    "interface": "wlo1",
+    "interval": 3,
+    "format": "󰖩 {essid}",
+    "format-disconnected": "",
+    "max-length": 15,
+    "tooltip-format": "Name: {essid}\nSignal: {signaldBm}dBm | {signalStrength}%\nIP: {ipaddr}\nFrequency: {frequency}GHz\nSpeed:  {bandwidthDownBytes}   {bandwidthUpBytes}",
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-on": "",
+    "format-off": "󰂲",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format-off": "{status}",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "max-length": 10,
+    "on-click": "bash ~/.config/river/scripts/toggle_bluetooth",
+  },
+
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip": false,
+    "on-click": "bash ~/.config/river/scripts/power_menu",
+  },
+}
