@@ -37,7 +37,7 @@ window#waybar {
 #network {
   margin-left: 8px;
   margin-right: 8px;
-  color: #42f542;
+  color: orange;
 }
 
 #temperature.critical {
