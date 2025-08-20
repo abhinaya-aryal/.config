@@ -123,6 +123,7 @@ export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
 # Kubernetes
 export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
+
 ###-begin-npm-completion-###
 #
 # npm command completion script

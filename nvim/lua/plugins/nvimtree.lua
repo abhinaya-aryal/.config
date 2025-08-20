@@ -17,7 +17,9 @@ return {
       },
       diagnostics = {
         enable = true,
-        show_on_dirs = true,
+      },
+      git = {
+        ignore = false,
       },
       modified = {
         enable = true,
@@ -37,10 +39,16 @@ return {
       },
       filters = {
         dotfiles = true,
-        custom = { "node_modules", "yarn.lock" },
+        -- custom = { "node_modules", "yarn.lock" },
       },
       trash = {
         cmd = "trash-put"
+      },
+      actions = {
+        open_file = {
+          quit_on_open = true,
+
+        }
       },
 
       on_attach = function(bufnr)
@@ -60,7 +68,7 @@ return {
         vim.keymap.set("n", "<C-r>", api.node.run.cmd, opts("Run Command"))
         vim.keymap.set("n", "<bs>", api.tree.change_root_to_parent, opts("Navigate Up"))
         vim.keymap.set("n", "a", api.fs.create, opts("Create"))
-        vim.keymap.set("n", "bm", api.marks.bulk.move, opts("Move Bookmarked"))
+        vim.keymap.set("n", "M", api.marks.bulk.move, opts("Move Bookmarked"))
         vim.keymap.set("n", "B", api.tree.toggle_no_buffer_filter, opts("Toggle Buffer"))
         vim.keymap.set("n", "c", api.fs.copy.node, opts("Copy"))
         vim.keymap.set("n", "C", api.tree.toggle_git_clean_filter, opts("Toggle Git Clean"))

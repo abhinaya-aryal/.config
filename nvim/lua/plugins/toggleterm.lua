@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     require("toggleterm").setup({
-      size = 5,
+      size = 8,
       open_mapping = [[<c-\>]],
       hide_numbers = true,
       insert_mapping = true,
