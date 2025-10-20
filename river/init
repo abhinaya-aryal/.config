@@ -104,6 +104,7 @@ riverctl input $touchpad events enabled
 riverctl input $touchpad tap enabled
 riverctl input $touchpad natural-scroll enabled
 riverctl input $touchpad drag enabled
+riverctl input $touchpad drag-lock enabled
 
 riverctl default-layout rivertile
 riverctl spawn "rivertile -outer-padding 4 -view-padding 4"

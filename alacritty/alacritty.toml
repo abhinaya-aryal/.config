@@ -3,6 +3,7 @@ import = ["~/.config/alacritty/cyberdream.toml"]
 
 [font]
  size = 11
+ # size = 20
 
 [font.normal]
  family = "FiraMono Nerd Font"

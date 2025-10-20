@@ -76,7 +76,7 @@ Choose:
 
 `gpg --list-secret-keys --keyid-format=long`
 
-Note the Key ID, e.g., ABC123DEF4567890.
+Note the Key ID, e.g., **ABC123DEF4567890** from sec after rsa4096/.
 
 ```bash
 git config --global user.signingkey ABC123DEF4567890

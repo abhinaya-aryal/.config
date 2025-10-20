@@ -57,8 +57,7 @@ return {
       update_in_insert = false,
     })
 
-    -- Lua language server specifically for nvim config
-    require("lspconfig").lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
@@ -82,6 +81,7 @@ return {
       },
     })
 
+
     -- C/C++ language server
     require("lspconfig").clangd.setup({
       on_attach = on_attach,
@@ -95,10 +95,11 @@ return {
     })
 
     -- Typescript language server
-    require("lspconfig").ts_ls.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
+    -- vim.lsp.config("ts_ls").setup({
+    --   on_attach = on_attach,
+    --   capabilities = capabilities,
+    -- })
+    vim.lsp.enable("ts_ls")
 
     -- Tailwindcss language server
     require("lspconfig").tailwindcss.setup({

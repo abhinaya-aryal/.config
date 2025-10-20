@@ -19,7 +19,9 @@ return {
       jsonc = { "prettier" },
       graphql = { "prettier" },
       markdown = { "prettier" },
-      md = { "prettier" }
+      md = { "prettier" },
+      yml = { "prettier" },
+      yaml = { "prettier" }
     },
     format_on_save = { timeout_ms = 1500, lsp_format = "fallback" },
     default_format_opts = {
