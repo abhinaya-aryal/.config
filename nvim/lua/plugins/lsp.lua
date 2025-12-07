@@ -111,5 +111,7 @@ return {
 		vim.lsp.enable("eslint")
 
 		vim.lsp.enable("jsonls")
+
+		vim.lsp.enable("prismals")
 	end,
 }
