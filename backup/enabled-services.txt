@@ -1,0 +1,16 @@
+UNIT FILE                          STATE   PRESET
+bluetooth.service                  enabled disabled
+getty@.service                     enabled enabled
+NetworkManager-dispatcher.service  enabled disabled
+NetworkManager-wait-online.service enabled disabled
+NetworkManager.service             enabled disabled
+reflector.service                  enabled disabled
+seatd.service                      enabled disabled
+tlp.service                        enabled disabled
+ufw.service                        enabled disabled
+docker.socket                      enabled disabled
+polkit-agent-helper.socket         enabled disabled
+systemd-userdbd.socket             enabled enabled
+remote-fs.target                   enabled enabled
+
+13 unit files listed.

@@ -113,5 +113,7 @@ return {
 		vim.lsp.enable("jsonls")
 
 		vim.lsp.enable("prismals")
+
+		vim.lsp.enable("typos_lsp")
 	end,
 }
