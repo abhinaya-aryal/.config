@@ -13,3 +13,7 @@ github-copilot
 docker
 pavucontrol.ini
 java
+kdeglobals
+kdenliverc
+kwalletrc
+QtProject.conf

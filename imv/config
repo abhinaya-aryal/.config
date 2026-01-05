@@ -2,7 +2,7 @@
 
 [options]
 overlay = true
-overlay_font = Monospace:16
+overlay_font = Monospace:14
 
 [binds]
 <Shift+X> = exec trash-put "$imv_current_file"; close

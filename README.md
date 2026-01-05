@@ -119,3 +119,19 @@ user = "abhinaya"
 ```
 
 Then, **enable** `greetd.service`.
+
+# Package Restore
+
+```sh
+yay -Qqe > ~/.config/backup/pkglist.txt
+```
+
+The above command captures all official repository packages and aur packages which are installed explicitly and ignore the dependencies.
+
+For restoring later, after a fresh Arch install:
+
+```sh
+yay -S --needed - < ~/.config/backup/pkglist.txt
+```
+
+Now yay will pull official packages and aur packages automatically skipping already installed ones.

@@ -22,6 +22,7 @@ grim
 grub
 imv
 intel-ucode
+kdenlive
 less
 linux-firmware-intel
 linux-firmware-realtek
@@ -33,7 +34,7 @@ mpv
 ncdu
 neovim
 networkmanager
-nodejs
+nodejs-lts-krypton
 npm
 openssh
 otf-firamono-nerd
@@ -58,6 +59,7 @@ tlp-rdw
 transmission-cli
 trash-cli
 typescript-language-server
+typos-lsp
 ufw
 unzip
 vscode-json-languageserver
