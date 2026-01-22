@@ -1,0 +1,22 @@
+palette = 0=#3c4048
+palette = 1=#5ea1ff
+palette = 2=#5ef1ff
+palette = 3=#5eff6c
+palette = 4=#bd5eff
+palette = 5=#ff6e5e
+palette = 6=#ffffff
+palette = 7=#f1ff5e
+palette = 8=#16181a
+palette = 9=#5ea1ff
+palette = 10=#5ef1ff
+palette = 11=#5eff6c
+palette = 12=#bd5eff
+palette = 13=#ff6e5e
+palette = 14=#ffffff
+palette = 15=#f1ff5e
+background =#16181a
+foreground =#ffffff
+cursor-color = #5eff6c
+cursor-text = cell-background
+selection-background =#3c4048
+selection-foreground =#ffffff
