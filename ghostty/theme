@@ -1,3 +1,6 @@
+# vim: set filetype=cfg :
+# cyberdream
+
 palette = 0=#3c4048
 palette = 1=#5ea1ff
 palette = 2=#5ef1ff
