@@ -137,3 +137,11 @@ yay -S --needed - < ~/.config/backup/pkglist.txt
 Now yay will pull official packages and aur packages automatically skipping already installed ones.
 
 https://linux-hardware.org/?probe=f5a9cb553a
+
+## Ghostty setup
+
+Start **ghostty** in the **background** on login, so that future requests to create new windows are extremely fast.
+
+```
+systemctl enable --user app-com.mitchellh.ghostty.service
+```
