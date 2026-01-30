@@ -1,7 +1,8 @@
 * {
   border: none;
-  font-family: "FiraMono Nerd Font";
+  font-family: "monospace";
   font-size: 17px;
+  font-weight: bold;
 }
 
 window#waybar {

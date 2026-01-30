@@ -120,6 +120,34 @@ user = "abhinaya"
 
 Then, **enable** `greetd.service`.
 
+# Default Shell
+
+Change the shell for the **current user**:
+
+```
+chsh -s /usr/bin/zsh
+```
+
+**OR**
+
+Change the shell for **existing users**:
+
+```
+sudo usermod -s /usr/bin/zsh username
+```
+
+Add a **new user** with **zsh** as the default shell:
+
+```
+sudo useradd -m -G wheel -s /usr/bin/zsh username
+sudo passwd username
+```
+
+- Remove default **bash config** from the user home directory.
+- Move directory in user's **home directory** according to the export of **.config/zsh/.zshrc**.
+
+# SSH Setup (See Github)
+
 # Package Restore
 
 ```sh

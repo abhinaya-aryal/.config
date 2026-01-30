@@ -30,39 +30,12 @@ return {
 
 		local snippet = require("luasnip")
 
-		local cmp_ai = require("cmp_ai.config")
-
-		cmp_ai:setup({
-			max_lines = 10,
-			provider = "Ollama",
-			provider_options = {
-				model = "codegemma:2b-code",
-				-- for qwen2.5-coder model
-				--[[ prompt = function(lines_before, lines_after)
-					return "<|fim_prefix|>" .. lines_before .. "<|fim_suffix|>" .. lines_after .. "<|fim_middle|>"
-				end, ]]
-				prompt = function(lines_before)
-					return lines_before
-				end,
-				suffix = function(lines_after)
-					return lines_after
-				end,
-			},
-
-			notify = true,
-			notify_callback = function(msg)
-				vim.notify("AI: " .. msg)
-			end,
-			run_on_every_keystroke = false,
-		})
-
 		local source_mapping = {
 			nvim_lsp = "[LSP]",
 			nvim_lsp_signature_help = "[Sig]",
 			buffer = "[Buffer]",
 			path = "[Path]",
 			luasnip = "[LuaSnip]",
-			cmp_ai = "[AI]",
 		}
 
 		local check_backspace = function()
@@ -120,7 +93,6 @@ return {
 			}),
 
 			sources = cmp.config.sources({
-				{ name = "cmp_ai" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "nvim_lsp_signature_help" },
@@ -130,7 +102,6 @@ return {
 
 			formatting = {
 				fields = { "abbr", "kind", "menu" }, -- "icon"
-
 				format = function(entry, vim_item)
 					vim_item.kind = require("lspkind").symbol_map[vim_item.kind or ""]
 					vim_item.menu = source_mapping[entry.source.name]
