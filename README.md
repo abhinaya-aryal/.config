@@ -173,3 +173,77 @@ Start **ghostty** in the **background** on login, so that future requests to cre
 ```
 systemctl enable --user app-com.mitchellh.ghostty.service
 ```
+
+# Routine Cleanup
+
+## Clear Pacman Package Cache
+
+Remove all cached packages except installed ones.
+
+```
+sudo pacman -Sc
+```
+
+## Clear User/Home Cache
+
+User-level applications cache files in `~/.cache/`. This is generally safe to delete, though it may temporarily slow down applications as they regenerate needed files.
+
+```
+rm -rf ~/.cache/*
+```
+
+## Clear AUR Helper Cache (yay)
+
+```
+yay -Sc
+```
+
+## Empty Trash
+
+```
+trash-empty
+```
+
+## Remove Orphan Packages
+
+```
+sudo pacman -Rns $(pacman -Qtdq)
+```
+
+## Clean Old Log Files
+
+Vacuum logs (example: keep only 7 days)
+
+```
+sudo journalctl --vacuum-time=7d
+```
+
+Or limit size:
+
+```
+sudo journalctl --vacuum-size=100M
+```
+
+## Find Large Files
+
+```
+ncdu /
+```
+
+Or
+
+```
+ncdu ~
+```
+
+## Remove Broken Symlinks
+
+```
+find ~ -xtype l -delete
+```
+
+## Clean Docker
+
+```
+docker system prune -a
+```
