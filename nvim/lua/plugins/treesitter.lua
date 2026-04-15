@@ -3,7 +3,7 @@ return {
 	build = ":TSUpdate",
 	event = { "BufAdd", "BufNewFile" },
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		--[[ require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"lua",
 				"zig",
@@ -16,6 +16,6 @@ return {
 				enable = true,
 			},
 			indent = { enable = true },
-		})
+		}) ]]
 	end,
 }

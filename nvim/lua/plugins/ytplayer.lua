@@ -1,6 +1,6 @@
 return {
-	-- "abhinaya-aryal/nvim-yt-player",
-	dir = "~/projects/nvim-yt-player",
+	"abhinaya-aryal/nvim-yt-player",
+	-- dir = "~/codes/nvim-yt-player",
 	name = "nvim-yt-player",
 	event = "VeryLazy",
 	config = function()
