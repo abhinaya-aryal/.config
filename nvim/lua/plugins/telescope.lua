@@ -1,3 +1,5 @@
+vim.pack.add({ "https://gihub.com/nvim-telescope/telescope.nvim" })
+
 vim.keymap.set("n", "<leader>tt", ":Telescope<CR>", { desc = "Telescope" })
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find File" })
 vim.keymap.set("n", "<leader>ft", ":Telescope live_grep<CR>", { desc = "Find text in cwd" })

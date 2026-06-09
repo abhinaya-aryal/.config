@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
+
 local on_attach = function(client, bufnr)
 	if client.server_capabilities.inlayHintProvider then
 		vim.lsp.inlay_hint.enable(true)
@@ -81,8 +83,6 @@ vim.lsp.config("lua_ls", {
 })
 
 vim.lsp.config("jsonls", {
-	on_attach = on_attach,
-	capabilities = capabilities,
 	settings = {
 		json = {
 			validate = { enable = true },
@@ -90,6 +90,14 @@ vim.lsp.config("jsonls", {
 				enable = true,
 				url = "https://www.schemastore.org/api/json/catalog.json",
 			},
+		},
+	},
+})
+
+vim.lsp.config("tailwindcss", {
+	settings = {
+		tailwindCSS = {
+			colorDecorators = false,
 		},
 	},
 })

@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
+
 local diff = {
 	"diff",
 	symbols = { added = " ", modified = " ", removed = " " },

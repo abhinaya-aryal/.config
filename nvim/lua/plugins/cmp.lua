@@ -1,3 +1,19 @@
+vim.pack.add({
+	"https://github.com/hrsh7th/nvim-cmp",
+	"https://github.com/hrsh7th/cmp-nvim-lsp",
+	"https://github.com/hrsh7th/cmp-buffer",
+	"https://github.com/hrsh7th/cmp-path",
+	"https://github.com/hrsh7th/cmp-cmdline",
+	"https://github.com/hrsh7th/cmp-nvim-lsp-signature-help",
+	{ src = "https://github.com/L3MON4D3/LuaSnip", run = "make install_jsregexp" },
+	"https://github.com/saadparwaiz1/cmp_luasnip",
+	"https://github.com/rafamadriz/friendly-snippets",
+	"https://github.com/onsails/lspkind.nvim",
+	"https://github.com/tzachar/cmp-ai",
+	"https://github.com/hrsh7th/cmp-nvim-lsp",
+	"https://github.com/hrsh7th/cmp-buffer",
+})
+
 vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { bg = "NONE", strikethrough = true, fg = "#808080" })
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { bg = "NONE", fg = "#569CD6" })
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { link = "CmpIntemAbbrMatch" })

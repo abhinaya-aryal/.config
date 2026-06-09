@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/windwp/nvim-autopairs" })
+
 require("nvim-autopairs").setup({
 	map_c_h = true, -- map the <C-h> key to delete a pair
 	check_ts = true,

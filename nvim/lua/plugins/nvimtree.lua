@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/nvim-tree/nvim-tree.lua" })
+
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Nvim Tree Toggle" })
 
 local api = require("nvim-tree.api")

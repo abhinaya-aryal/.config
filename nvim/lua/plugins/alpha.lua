@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/goolord/alpha-nvim" })
+
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
 	[[                               __                ]],
@@ -33,7 +35,7 @@ vim.api.nvim_create_autocmd("User", {
 		local version = " v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
 		local fortune = require("alpha.fortune")
 		local quote = table.concat(fortune(), "\n")
-		local footer = "\t\t\t\t\t\t\t\t\t\t" .. version .. "\n" .. quote
+		local footer = "\t\t\t\t\t\t\t\t\t\t\t" .. version .. "\n" .. quote
 		dashboard.section.footer.val = footer
 		pcall(vim.cmd.AlphaRedraw)
 	end,

@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/akinsho/toggleterm.nvim" })
+
 require("toggleterm").setup({
 	size = 8,
 	open_mapping = [[<c-\>]],

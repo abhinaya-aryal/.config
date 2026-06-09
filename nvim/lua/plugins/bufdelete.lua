@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/famiu/bufdelete.nvim" })
+
 local buffer_timers = {}
 local deleteAfterMins = 10
 

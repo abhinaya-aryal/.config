@@ -17,3 +17,6 @@ kdeglobals
 kdenliverc
 kwalletrc
 QtProject.conf
+/zoom
+/zoom.conf
+/zoomus.conf
