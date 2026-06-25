@@ -1,6 +1,7 @@
 require("config.options")
 require("config.keymaps")
 
+-- dependencies required by multiple plugins
 vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/MunifTanjim/nui.nvim",
@@ -23,7 +24,7 @@ require("plugins.conform")
 require("plugins.gitsigns")
 require("plugins.indentline")
 require("plugins.markdown")
-require("plugins.cmp")
+require("plugins.blink")
 require("plugins.ytplayer")
 require("plugins.comment")
 require("plugins.tsmanager")
