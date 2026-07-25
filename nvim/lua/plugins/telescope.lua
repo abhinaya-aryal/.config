@@ -1,4 +1,4 @@
-vim.pack.add({ "https://gihub.com/nvim-telescope/telescope.nvim" })
+vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim" })
 
 vim.keymap.set("n", "<leader>tt", ":Telescope<CR>", { desc = "Telescope" })
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find File" })
