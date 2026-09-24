@@ -11,8 +11,7 @@
     "pulseaudio",
     "network",
   ],
-  "modules-center": ["river/window"],
-  "modules-right": ["river/tags", "clock", "bluetooth", "custom/power"],
+  "modules-right": ["clock", "bluetooth", "custom/power"],
 
   "custom/launcher": {
     "format": "",

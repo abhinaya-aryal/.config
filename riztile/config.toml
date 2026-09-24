@@ -1,0 +1,73 @@
+[layout]
+outer_gap = 8
+inner_gap = 10
+border_width = 0
+focused_border_width = 2
+focused_border_color = 0x59acffff
+master_count = 1
+master_factor = 0.5
+
+[tags]
+count = 6
+
+[keybindings]
+"Super R" = "reload"
+"Super Q" = "close"
+"Super H" = "decrease_master_factor"
+"Super L" = "increase_master_factor"
+"Super Shift H" = "increase_master_count"
+"Super Shift L" = "decrease_master_count"
+"Super J" = "focus_next_window"
+"Super K" = "focus_prev_window"
+"Super Space" = "toggle_float"
+"Super Escape" = "exit"
+"Super F" = "toggle_fullscreen"
+"Super D" = { spawn = "fuzzel" }
+"Super E" = { spawn = "~/.config/river/scripts/power_menu" }
+"Ctrl Alt T" = { spawn = "ghostty" }
+"Ctrl Alt B" = { spawn = "brave --ozone-platform=wayland --use-gl=angle --use-angle=vulkan --enable-features=Vulkan,DefaultANGLEVulkan,VulkanFromANGLE" }
+"Ctrl Alt M" = { spawn = "mpv --player-operation-mode=pseudo-gui" }
+"Super 1" = { set_active_tag = 1 }
+"Super 2" = { set_active_tag = 2 }
+"Super 3" = { set_active_tag = 3 }
+"Super 4" = { set_active_tag = 4 }
+"Super 5" = { set_active_tag = 5 }
+"Super 6" = { set_active_tag = 6 }
+"Super Shift 1" = { move_to_tag = 1 }
+"Super Shift 2" = { move_to_tag = 2 }
+"Super Shift 3" = { move_to_tag = 3 }
+"Super Shift 4" = { move_to_tag = 4 }
+"Super Shift 5" = { move_to_tag = 5 }
+"Super Shift 6" = { move_to_tag = 6 }
+"Super Ctrl 1" = { toggle_active_tag = 1 }
+"Super Ctrl 2" = { toggle_active_tag = 2 }
+"Super Ctrl 3" = { toggle_active_tag = 3 }
+"Super Ctrl 4" = { toggle_active_tag = 4 }
+"Super Ctrl 5" = { toggle_active_tag = 5 }
+"Super Ctrl 6" = { toggle_active_tag = 6 }
+"Super Alt 1" = { toggle_focused_window_tag = 1 }
+"Super Alt 2" = { toggle_focused_window_tag = 2 }
+"Super Alt 3" = { toggle_focused_window_tag = 3 }
+"Super Alt 4" = { toggle_focused_window_tag = 4 }
+"Super Alt 5" = { toggle_focused_window_tag = 5 }
+"Super Alt 6" = { toggle_focused_window_tag = 6 }
+"Print" = { spawn = 'IMG=~/images/$(date | sed "s/\s/-/g" | sed "s/--/-/g").png && grim -g "$(slurp)" $IMG && cat $IMG | wl-copy && notify-send "Success!" "Screenshot has been saved and copied to your clipboard." -u normal' }
+"XF86AudioRaiseVolume" = { spawn = "pamixer --increase 1" }
+"XF86AudioLowerVolume" = { spawn = "pamixer --decrease 1" }
+"XF86AudioMute" = { spawn = "pamixer --toggle-mute" }
+"XF86AudioMedia" = { spawn = "playerctl play-pause" }
+"XF86AudioPlay" = { spawn = "playerctl play-pause" }
+"XF86AudioPrev" = { spawn = "playerctl previous" }
+"XF86AudioNext" = { spawn = "playerctl next" }
+"XF86MonBrightnessUp" = { spawn = "brightnessctl s +1%" }
+"XF86MonBrightnessDown" = { spawn = "brightnessctl s 1%-" }
+
+[pointerbindings]
+"Super BTN_LEFT" = "move"
+"Super BTN_RIGHT" = "resize"
+
+[autostart]
+commands = ["dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river", "waybar", "~/.config/river/scripts/wallpaper_changer &"]
+
+[input]
+"*" = { tap = true, tap_and_drag = true, natural_scroll = true }
