@@ -1,6 +1,15 @@
 {
-  "$schema": "https://raw.githubusercontent.com/zigtools/zls/refs/tags/0.13.0/schema.json",
+  "$schema": "https://raw.githubusercontent.com/zigtools/zls/refs/tags/0.16.0/schema.json",
   "warn_style": true,
   "highlight_global_var_declarations": true,
-  "inlay_hints_show_variable_type_hints": false
+  "inlay_hints_show_variable_type_hints": true,
+  "inlay_hints_show_struct_literal_field_type": true,
+  "inlay_hints_show_parameter_name": false,
+  "inlay_hints_show_builtin": true,
+  "inlay_hints_exclude_single_argument": true,
+  "inlay_hints_hide_redundant_param_names": false,
+  "inlay_hints_hide_redundant_param_names_last_token": false,
+  "enable_build_on_save": true,
+  "build_on_save_args": ["check"],
+  "force_autofix": false
 }

@@ -10,6 +10,11 @@ master_factor = 0.5
 [tags]
 count = 6
 
+[animation.tag_switch]
+enabled = true
+duration_ms = 180
+curve = "ease_out_cubic"
+
 [keybindings]
 "Super R" = "reload"
 "Super Q" = "close"
@@ -17,11 +22,14 @@ count = 6
 "Super L" = "increase_master_factor"
 "Super Shift H" = "increase_master_count"
 "Super Shift L" = "decrease_master_count"
+"Super Shift J" = "swap_next_window"
+"Super Shift K" = "swap_prev_window"
 "Super J" = "focus_next_window"
 "Super K" = "focus_prev_window"
 "Super Space" = "toggle_float"
 "Super Escape" = "exit"
 "Super F" = "toggle_fullscreen"
+"Super Return" = "zoom"
 "Super D" = { spawn = "fuzzel" }
 "Super E" = { spawn = "~/.config/river/scripts/power_menu" }
 "Ctrl Alt T" = { spawn = "ghostty" }
